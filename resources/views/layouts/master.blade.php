@@ -17,7 +17,7 @@
           </a>
         </div>
         <div class="h-logo">
-          <a href="home.php">
+          <a href="/home">
             <h1>Sigma</h1>
           </a>
         </div>

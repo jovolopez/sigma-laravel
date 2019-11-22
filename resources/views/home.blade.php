@@ -1,8 +1,10 @@
 @extends('layouts.master')
 @section('css')
   <link rel="stylesheet" href="/css/home.css">
+@endsection
 @section('title')
 Home
+@endsection
 @section('main')
 <div class="banner">
   <div class="banner-text">
@@ -56,3 +58,4 @@ Home
     <p>Ver más productos</p>
   </article>
 </section>
+@endsection
