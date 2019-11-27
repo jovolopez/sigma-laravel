@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans';
+}
+
+.container {
+  display: flex;
+  align-items: center;
+
+}
+
+.banner {
+  background: linear-gradient(0deg, rgba(242,87,148,1) 1%, rgba(161,64,224,1) 100%);
+  width: 100vw;
+  height: 25vh;
+  padding-top: 3em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.banner-text {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  padding-left: 5px;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-img {
+  width: 50;
+  justify-content: center;
+  margin: 8px;
+}
+
+.banner-img img {
+  width: 125px;
+  height: 125px;
+  padding: 10px;
+  object-fit:cover;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.sesion{
+  width: 200px;
+  text-align: center;
+  z-index: 1;
+  background: #ddd;
+  border-radius: 50px;
+  opacity: 0.8;
+  align-items: center;
+  margin: 1em;
+}
+
+.opciones {
+  padding: 1em;
+  width: 100%;
+}
+.opcion .icon{
+  margin-right: 5px;
+}
+.container {
+  flex-direction: column;
+}
+
+.opcion {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 768px) {
+
+  .container {
+    display: inherit;
+    width: 100%;
+  }
+
+  .banner {
+    margin-top: 3em;
+    width: 100vw;
+    min-height: 15vh;
+    max-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .banner img {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    object-fit:cover;
+    margin-bottom: 1em;
+  }
+
+  .banner-text {
+    width: auto;
+  }
+
+}
