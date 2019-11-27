@@ -2,7 +2,6 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/master.css">
     @yield('css')
@@ -18,14 +17,13 @@
           </a>
         </div>
         <div class="h-logo">
-          <a href="/">
+          <a href="/home">
             <h1>Sigma</h1>
           </a>
         </div>
         <div class="h-busq-sm">
           <ion-icon name="ios-search" size="large" role="img" class="md icon-large hydrated" aria-label="search"></ion-icon>
         </div>
-
         <div class="h-bar">
           <div class="h-hiperv">
             <a href="checkout.php">
@@ -39,19 +37,12 @@
               </div>
             </a>
           </div>
-          <!-- Authentication Links -->
           <div class="h-hiperv">
-            <a href="perfil">
+            <a href="perfil.php">
               <div class="h-icontext">
-                @guest
-                  <div class="h-text">
-                    Login
-                  </div>
-                @else
-                  <div class="h-text">
-                    {{ ucfirst(Auth::user()->first_name) }}
-                  </div>
-                @endguest
+                <div class="h-text">
+                  Mi perfil
+                </div>
                 <div class="h-icon">
                   <ion-icon class="nav-icon" name="person"></ion-icon>
                 </div>
@@ -60,7 +51,6 @@
           </div>
         </div>
       </div>
-
       <div class="cont-head-b">
         <form class="form-busq" action="index.html" method="get">
           <div class="h-categorias">
@@ -84,10 +74,10 @@
       @yield('main')
     </main>
     <div class="nav-menu">
-      <div><a href="/"><ion-icon class="nav-icon" name="home"></ion-icon></a></div>
+      <div><a href="home.php"><ion-icon class="nav-icon" name="home"></ion-icon></a></div>
       <div><a href="list.php"><ion-icon class="nav-icon" name="list"></ion-icon></a></div>
       <div><a href="checkout.php"><ion-icon class="nav-icon" name="cart"></ion-icon></a></div>
-      <div><a href="perfil"><ion-icon class="nav-icon" name="person"></ion-icon></a></div>
+      <div><a href="perfil.php"><ion-icon class="nav-icon" name="person"></ion-icon></a></div>
     </div>
     <footer>
       <div class="bg-cont">
