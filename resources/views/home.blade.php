@@ -29,7 +29,7 @@ Home
   <article class="producto">
       <a href="producto.php">
         <img src="/img/macbook.jpg" alt="Macbook">
-        <p>Macbook Pro 2019</p>
+        <p>Macbook Infinity 2019</p>
       </a>
     </article>
 @endfor
