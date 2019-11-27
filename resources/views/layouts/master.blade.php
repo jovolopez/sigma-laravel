@@ -18,7 +18,7 @@
           </a>
         </div>
         <div class="h-logo">
-          <a href="/home">
+          <a href="/">
             <h1>Sigma</h1>
           </a>
         </div>
@@ -84,7 +84,7 @@
       @yield('main')
     </main>
     <div class="nav-menu">
-      <div><a href="home"><ion-icon class="nav-icon" name="home"></ion-icon></a></div>
+      <div><a href="/"><ion-icon class="nav-icon" name="home"></ion-icon></a></div>
       <div><a href="list.php"><ion-icon class="nav-icon" name="list"></ion-icon></a></div>
       <div><a href="checkout.php"><ion-icon class="nav-icon" name="cart"></ion-icon></a></div>
       <div><a href="perfil"><ion-icon class="nav-icon" name="person"></ion-icon></a></div>
