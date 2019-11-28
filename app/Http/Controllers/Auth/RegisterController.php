@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,9 +49,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+          'first_name' => ['required', 'string', 'max:255'],
+          'last_name' => ['required', 'string', 'max:255'],
+          'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+          'password' => ['required', 'string', 'min:8', 'confirmed'],
+          'avatar' => ['nullable', 'image'],
         ]);
     }
 
@@ -63,10 +65,43 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $ruta = '';
+        if (isset($data['avatar'])) {
+            //muevo el archivo
+            $ruta = $data['avatar']->store('public\avatars');
+            $ruta = basename($ruta);
+
+            //Comprimir la imagen para que no ocupe tanto espacio.
+            $filepath = public_path('\\storage\\avatars\\'.$ruta);
+
+            try {
+                \Tinify\setKey("7rl2g2dfnNXgN51jJCgwGmXtRfqdhKwP");
+                $source = \Tinify\fromFile($filepath);
+                $source->toFile($filepath);
+            } catch(\Tinify\AccountException $e) {
+                // Verify your API key and account limit.
+                return redirect('images/create')->with('error', $e->getMessage());
+            } catch(\Tinify\ClientException $e) {
+                // Check your source image and request options.
+                return redirect('images/create')->with('error', $e->getMessage());
+            } catch(\Tinify\ServerException $e) {
+                // Temporary issue with the Tinify API.
+                return redirect('images/create')->with('error', $e->getMessage());
+            } catch(\Tinify\ConnectionException $e) {
+                // A network connection error occurred.
+                return redirect('images/create')->with('error', $e->getMessage());
+            } catch(Exception $e) {
+                // Something else went wrong, unrelated to the Tinify API.
+                return redirect('images/create')->with('error', $e->getMessage());
+            }
+          }
+
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'avatar' => $ruta,
         ]);
     }
 }

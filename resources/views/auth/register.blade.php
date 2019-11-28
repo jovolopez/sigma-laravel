@@ -1,8 +1,10 @@
 @extends('layouts.master')
 @section('css')
 <link rel="stylesheet" href="/css/registro.css">
+@endsection
 @section('title')
 Registro
+@endsection
 @section('main')
 <div class="row justify-content-center">
 <form class="regis-form" action="{{ route('register') }}" method="post" enctype="multipart/form-data">
@@ -10,16 +12,11 @@ Registro
   <h2>Registro</h2>
   <hr size="1px" color="#ddd">
   <div class="form-group row">
-    <div class="campo foto">
-          <label for="foto">Suba una foto</label>
-          <input type="file" name="foto" value="" id="foto">
-    </div>
-
     <div class="campo name">
           <label for="nombre">Nombre</label>
-          <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Nombre" value="{{ old('name') }}">
+          <input type="text" name="first_name" id="name" class="@error('name') is-invalid @enderror" placeholder="Nombre" value="{{ old('name') }}">
 
-            @error('name')
+            @error('first_name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -28,9 +25,9 @@ Registro
 
     <div class="campo surname">
           <label for="apellido">Apellido</label>
-          <input type="text" name="apellido" id="surname" class="@error('surname') is-invalid @enderror" placeholder="Apellido" value="{{ old('surname') }}">
+          <input type="text" name="last_name" id="surname" class="@error('surname') is-invalid @enderror" placeholder="Apellido" value="{{ old('surname') }}">
 
-          @error('surname')
+          @error('last_name')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
@@ -61,23 +58,29 @@ Registro
 
       <div class="campo rpass">
         <label for="rpass">Repita su contraseña</label>
-        <input type="password" name="rpass" id="rpass" class="" placeholder="Repetir contraseña">
+        <input type="password" name="password_confirmation" id="rpass" class="" placeholder="Repetir contraseña">
       </div>
 
-      <div class="campo terms">
-        <input type="checkbox" name="terms" id="terms" class="@error('terms') is-invalid @enderror" class="check">
-        <label for="terms">Acepto los Términos y Condiciones de este sitio web.</label>
+      <div class="campo foto">
+            <label for="foto">Avatar (Opcional)</label>
+            <input type="file" name="avatar" value="" id="foto">
+      </div>
+
+      @error('avatar')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+      @enderror
+
+      <div class="campo terms" style="display: flex;">
+        <input style="width: 2em; margin-right: 1em;" type="checkbox" name="terms" id="terms" class="@error('terms') is-invalid @enderror" class="check">
+        <label style="padding-top: 0.5em;" for="terms">Acepto los Términos y Condiciones de este sitio web.</label>
 
         @error('terms')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
-      </div>
-
-      <div class="campo recuer">
-        <input type="checkbox" name="recuer" id="recuer" class="check">
-        <label for="recuer">Mantener sesión iniciada</label>
       </div>
 
       <div class="campo button">
