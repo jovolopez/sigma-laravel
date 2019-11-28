@@ -14,7 +14,7 @@ body {
 
 .banner {
   background: linear-gradient(0deg, rgba(242,87,148,1) 1%, rgba(161,64,224,1) 100%);
-  width: 100vw;
+  width: auto;
   height: 25vh;
   padding-top: 3em;
   overflow: hidden;
@@ -84,7 +84,7 @@ body {
 
   .banner {
     margin-top: 3em;
-    width: 100vw;
+    width: auto;
     min-height: 15vh;
     max-height: 20vh;
     display: flex;

@@ -22,6 +22,12 @@
       </div>
 
       <div class="opciones">
+        @if (Auth::user()->is_admin == 1)
+          <div class="opcion">
+            <ion-icon class="icon" name="add-circle"></ion-icon>
+            <a href="/cargarProducto">Cargar Producto.</a>
+          </div>
+        @endif
         <div class="opcion">
           <ion-icon class="icon" name="card"></ion-icon>
           <p>Datos de pago</p>
