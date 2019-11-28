@@ -11,4 +11,4 @@ Auth::routes();
 Route::get('/perfil', 'PerfilController@show');
 
 //Carga de Productos
-Route::get('/cargaProducto', 'ProductoController@showForm');
+Route::get('/cargarProducto', 'ProductoController@showForm');

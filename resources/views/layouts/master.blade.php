@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="busq-input">
-            <input type="text" name="search" value="" class="search">
+            <input type="text" name="search" value="" class="search" autocomplete="off">
           </div>
           <div class="busq-icon">
             <ion-icon name="ios-search" role="img" aria-label="search"></ion-icon>
