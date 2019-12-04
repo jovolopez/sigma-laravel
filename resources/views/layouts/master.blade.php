@@ -31,7 +31,7 @@
             <a href="checkout.php">
               <div class="h-icontext">
                 <div class="h-text">
-                  Ver carrito
+                  <a href="/carrito">Ver carrito</a>
                 </div>
                 <div class="h-icon">
                   <ion-icon class="nav-icon" name="cart"></ion-icon>
