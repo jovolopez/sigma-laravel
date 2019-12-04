@@ -9,9 +9,9 @@ Mi carro - Sigma
 @section('main')
 
   <body class="container mt-5">
-    <div class="row">
+    <div class="row d-flex justify-content-center mb-3">
       <div id="custom" class="col-12 col-lg-8 mt-5">
-        <h1 class="d-flex justify-content-center my-3">Sigma Store</h1>
+        <h1 class="d-flex justify-content-center my-3">Mi Carrito</h1>
 
         <!-- Inicio tabla de productos -->
         <div class="table-responsive-sm">
@@ -73,7 +73,7 @@ Mi carro - Sigma
 
 
 
-      <div id="custom" class="col-12 col-lg-3 my-5 totalDiv">
+      <div id="custom" class="col-12 col-lg-3 mt-5 totalDiv">
         <div class="col-lg-6 mw-100">
           <div class="bg-light rounded-pill mt-4 px-3 py-2 text-uppercase font-weight-bold">Resumen del Pedido</div>
           <div class="p-3">

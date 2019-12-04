@@ -80,7 +80,7 @@
         </form>
       </div>
     </header>
-    <main class="container">
+    <main>
       @yield('main')
     </main>
     <div class="nav-menu">

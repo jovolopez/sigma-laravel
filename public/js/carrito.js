@@ -3,6 +3,8 @@ segun el viewport del usuario. */
 var viewportWidth = window.innerWidth;
 var productTitle = document.querySelectorAll('.text-truncate');
 
+console.log(viewportWidth);
+
 if (viewportWidth < 370) {
   for (var i = 0; i < productTitle.length; i++) {
     productTitle[i].style.maxWidth = "100px";
