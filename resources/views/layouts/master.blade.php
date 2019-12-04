@@ -31,7 +31,7 @@
             <a href="checkout.php">
               <div class="h-icontext">
                 <div class="h-text">
-                  Ver carrito
+                  <a href="/carrito">Ver carrito</a>
                 </div>
                 <div class="h-icon">
                   <ion-icon class="nav-icon" name="cart"></ion-icon>
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="busq-input">
-            <input type="text" name="search" value="" class="search">
+            <input type="text" name="search" value="" class="search" autocomplete="off">
           </div>
           <div class="busq-icon">
             <ion-icon name="ios-search" role="img" aria-label="search"></ion-icon>
