@@ -22,4 +22,8 @@ class ProductoController extends Controller
   {
       return view('cargarProducto');
   }
+
+  public function showProduct(){
+    return view('producto');
+  }
 }
