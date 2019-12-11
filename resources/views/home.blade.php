@@ -27,7 +27,7 @@ Home
 
 @for ($i=0; $i < 4; $i++)
   <article class="producto">
-      <a href="producto.php">
+      <a href="producto">
         <img src="/img/macbook.jpg" alt="Macbook">
         <p>Macbook Infinity 2019</p>
       </a>
