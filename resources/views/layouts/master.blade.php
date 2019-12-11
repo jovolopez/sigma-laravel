@@ -138,6 +138,7 @@
         <p>Sigma 2019, todos los derechos reservados.</p>
       </div>
     </footer>
+    @yield ('scripts')
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>
