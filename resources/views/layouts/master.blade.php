@@ -98,7 +98,7 @@
         </form>
       </div>
     </header>
-    <main class="container">
+    <main>
       @yield('main')
     </main>
     <div class="nav-menu">
@@ -156,6 +156,7 @@
         <p>Sigma 2019, todos los derechos reservados.</p>
       </div>
     </footer>
+    @yield ('scripts')
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script type="text/javascript" src="/js/master.js"></script>
   </body>

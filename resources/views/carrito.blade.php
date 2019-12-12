@@ -9,9 +9,9 @@ Mi carro - Sigma
 @section('main')
 
   <body class="container mt-5">
-    <div class="row">
+    <div class="row d-flex justify-content-center mb-3">
       <div id="custom" class="col-12 col-lg-8 mt-5">
-        <h1 class="d-flex justify-content-center my-3">Sigma Store</h1>
+        <h1 class="d-flex justify-content-center my-3">Mi Carrito</h1>
 
         <!-- Inicio tabla de productos -->
         <div class="table-responsive-sm">
@@ -73,7 +73,7 @@ Mi carro - Sigma
 
 
 
-      <div id="custom" class="col-12 col-lg-3 my-5 totalDiv">
+      <div id="custom" class="col-12 col-lg-3 mt-5 totalDiv">
         <div class="col-lg-6 mw-100">
           <div class="bg-light rounded-pill mt-4 px-3 py-2 text-uppercase font-weight-bold">Resumen del Pedido</div>
           <div class="p-3">
@@ -90,10 +90,12 @@ Mi carro - Sigma
       </div>
     </div>
 
-  <script type="text/javascript" src="/js/carrito.js"></script>
-  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  @section('scripts')
+    <script type="text/javascript" src="/js/carrito.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  @endsection
   </body>
 </html>

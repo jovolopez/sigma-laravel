@@ -14,18 +14,20 @@ Cargar Producto
   <div class="container" style="min-height: 50vh;">
     <h1>Cargar producto nuevo.</h1>
 
-    <form>
+    <form class="" action="productsaction" method="post">
+      @csrf
+
       <div class="form-group row">
         <label for="inputNombre" class="col-sm-2 col-form-label">Nombre del producto</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputNombre">
+          <input name="titulo" type="text" class="form-control" id="inputNombre">
         </div>
       </div>
 
       <div class="form-group row">
         <label for="inputDetalle" class="col-sm-2 col-form-label">Detalle</label>
         <div class="col-sm-10">
-          <textarea class="form-control" aria-label="With textarea"></textarea>
+          <textarea name="descripcion" class="form-control" aria-label="With textarea"></textarea>
         </div>
       </div>
 
