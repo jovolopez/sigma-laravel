@@ -41,11 +41,11 @@
           </div>
           <!-- Authentication Links -->
           <div class="h-hiperv">
-            <a href="perfil">
+
               <div class="h-icontext">
                 @guest
                   <div class="h-text">
-                    Login
+                    Mi Cuenta
                   </div>
                 @else
                   <div class="h-text">
@@ -56,7 +56,25 @@
                   <ion-icon class="nav-icon" name="person"></ion-icon>
                 </div>
               </div>
-            </a>
+
+            <div class="submenu">
+              <div class="h-icontext">
+                @guest
+                  <div class="h-text">
+                    <a href="/login">Iniciar Sesion</a>
+                    <a href="/register">Registrarse</a>
+                  </div>
+                @else
+                  <div class="h-text">
+                    <a href="/perfil">Mi cuenta</a>
+                    <form class="" action="{{ route('logout') }}" method="post">
+                      @csrf
+                      <button type="submit" name="button">Desconectarse</button>
+                    </form>
+                  </div>
+                @endguest
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -139,5 +157,6 @@
       </div>
     </footer>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script type="text/javascript" src="/js/master.js"></script>
   </body>
 </html>

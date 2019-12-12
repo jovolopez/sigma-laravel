@@ -14,4 +14,4 @@ Route::get('/perfil', 'PerfilController@show');
 Route::get('/cargarProducto', 'ProductoController@showForm');
 
 //Carrito
-Route::get('carrito', 'CarritoController@show');
+Route::get('/carrito', 'CarritoController@show');
