@@ -13,14 +13,10 @@ class ProductoController extends Controller
    * @return void
    */
 
-   //Middleware para estar autenticado.
-  public function __construct()
-  {
-      $this->middleware('admin');
-  }
-
   public function showForm()
   {
+      //Middleware para estar autenticado.
+      $this->middleware('admin');
       return view('cargarProducto');
   }
 

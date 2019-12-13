@@ -32,12 +32,12 @@ main {
 hr{
   margin: 10px 0;
 }
-h2 {
+.container h2 {
   text-align: center;
   font-weight: 400;
   font-size: 1.5em;
 }
-input {
+.login-form input {
   border: solid 2px #eee;
   border-radius: 3px;
   width: 100%;
@@ -61,7 +61,8 @@ input {
   display: flex;
   justify-content: center;
 }
-button{
+
+.login-form button{
   background-color: white;
   padding: 10px;
   color: #777;

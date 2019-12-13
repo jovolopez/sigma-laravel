@@ -14,10 +14,10 @@ Route::get('/perfil', 'PerfilController@show');
 Route::get('/carrito', 'CarritoController@show');
 
 //Carga de Productos (Vista de Formulario)
-Route::get('/cargarProducto', 'ProductoController@showForm');
+Route::get('/cargarProducto', 'ProductoController@showForm')->middleware('admin');
 
 // Guardado de Productos (Backend)
-Route::post('productsaction', 'ProductoController@saveProduct');
+Route::post('/productsaction', 'ProductoController@saveProduct')->middleware('admin');
 
 //Vista producto
-Route::get('producto', 'ProductoController@showProduct');
+Route::get('/producto', 'ProductoController@showProduct');
