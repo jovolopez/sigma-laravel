@@ -1,0 +1,155 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-mobile-help {
+  display: none;
+}
+
+.h-container {
+  width: 100vw;
+  height: 6em;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  width: 20%;
+  margin: 0 0 0 1em;
+}
+
+.searcher {
+  width: 50%;
+  height: 100%;
+}
+
+.upper {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info-icon {
+  margin: 0 1em;
+  display: flex;
+}
+
+.bottom {
+  height: 50%;
+  display: flex;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  width: 100%;
+}
+
+#search-input {
+  border: 1px solid #dbdbdb;
+  padding: 8px;
+  width: 70%;
+}
+
+#submit-input {
+  background: #404040;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+.actions {
+  width: 30%;
+  height: 100%;
+}
+
+.user {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px 0 0;
+}
+
+.categories {
+  width: 100vw;
+  height: 2em;
+  background: #f5f5f5;;
+  display: flex;
+  align-items: center;
+}
+
+.title-explorer {
+  width: 20%;
+  margin-left: 1em;
+}
+
+.categories-names {
+  width: 80%;
+}
+
+.categories-names ul li {
+  display: inline;
+  padding: 0 5px 0 0;
+  margin-left: 15px;
+}
+
+.categories-names ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .categories {
+    display: none;
+  }
+  .upper {
+    display: none;
+  }
+  .search-mobile-help {
+    display: inherit;
+    margin-left: 10px;
+    position: absolute;
+    right: 1em;
+  }
+  .h-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .searcher{
+    width: 100%;
+  }
+  .searchbar {
+    width: 90%;
+  }
+  #search-input {
+    width: 100%;
+  }
+}
