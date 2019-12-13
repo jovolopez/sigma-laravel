@@ -17,8 +17,8 @@ class ProductosTable extends Migration
           $table->bigIncrements('id');
           $table->string('titulo');
           $table->string('descripcion');
-          $table->string('foto');
-          $table->integer('stock');
+          $table->string('foto')->nullable();
+          $table->integer('stock')->nullable();
           $table->timestamps();
       });
     }

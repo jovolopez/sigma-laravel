@@ -5,6 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/header.css">
     @yield('css')
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:400,600,700&amp;display=swap" rel="stylesheet">
     <title>Sigma - @yield('title')</title>
@@ -28,10 +29,10 @@
 
         <div class="h-bar">
           <div class="h-hiperv">
-            <a href="/carrito">
+            <a href="checkout.php">
               <div class="h-icontext">
                 <div class="h-text">
-                  Ver carrito
+                  <a href="/carrito">Ver carrito</a>
                 </div>
                 <div class="h-icon">
                   <ion-icon class="nav-icon" name="cart"></ion-icon>
@@ -41,11 +42,11 @@
           </div>
           <!-- Authentication Links -->
           <div class="h-hiperv">
-            <a href="perfil">
+
               <div class="h-icontext">
                 @guest
                   <div class="h-text">
-                    Login
+                    Mi Cuenta
                   </div>
                 @else
                   <div class="h-text">
@@ -56,7 +57,25 @@
                   <ion-icon class="nav-icon" name="person"></ion-icon>
                 </div>
               </div>
-            </a>
+
+            <div class="submenu">
+              <div class="h-icontext">
+                @guest
+                  <div class="h-text">
+                    <a href="/login">Iniciar Sesion</a>
+                    <a href="/register">Registrarse</a>
+                  </div>
+                @else
+                  <div class="h-text">
+                    <a href="/perfil">Mi cuenta</a>
+                    <form class="" action="{{ route('logout') }}" method="post">
+                      @csrf
+                      <button type="submit" name="button">Desconectarse</button>
+                    </form>
+                  </div>
+                @endguest
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -139,6 +158,7 @@
       </div>
     </footer>
     @yield ('scripts')
+    
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
   </body>
