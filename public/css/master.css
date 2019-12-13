@@ -82,7 +82,7 @@ footer {
   padding-bottom: 20px;
   padding-right: 40px;
   padding-left: 40px;
-  width: 100vw !important;
+  width: 100% !important;
   position: absolute !important;
   left: 0px !important;
 }

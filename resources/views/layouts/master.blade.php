@@ -28,10 +28,10 @@
 
         <div class="h-bar">
           <div class="h-hiperv">
-            <a href="checkout.php">
+            <a href="/carrito">
               <div class="h-icontext">
                 <div class="h-text">
-                  <a href="/carrito">Ver carrito</a>
+                  Ver carrito
                 </div>
                 <div class="h-icon">
                   <ion-icon class="nav-icon" name="cart"></ion-icon>
@@ -139,6 +139,7 @@
       </div>
     </footer>
     @yield ('scripts')
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

@@ -17,7 +17,7 @@ Home
 </div>
 
 <div class="ordenar">
-  <a href="list.php">
+  <a href="lista">
     <ion-icon name="list-box"></ion-icon>
     <p>Ver en lista</p>
   </a>
