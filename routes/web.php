@@ -21,3 +21,6 @@ Route::post('/productsaction', 'ProductoController@saveProduct')->middleware('ad
 
 //Vista producto
 Route::get('/producto', 'ProductoController@showProduct');
+
+//Vista lista
+Route::get('/lista', 'ListaController@show');

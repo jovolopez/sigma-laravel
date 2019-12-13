@@ -81,7 +81,7 @@ footer a {
 footer {
   background-color: #312C2B;
   padding: 20px 40px;
-  width: 100vw !important;
+  width: 100% !important;
   position: absolute !important;
   left: 0px !important;
   overflow: hidden;

@@ -7,16 +7,8 @@ use App\Producto;
 
 class ProductoController extends Controller
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-
   public function showForm()
   {
-      //Middleware para estar autenticado.
-      $this->middleware('admin');
       return view('cargarProducto');
   }
 

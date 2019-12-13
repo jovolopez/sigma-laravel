@@ -12,62 +12,91 @@
   </head>
   <body>
     <header>
-      <div class="h-container">
-        <a class="logo" href="#">
-          <div>
-            <h2>Sigma Store</h2>
-          </div>
-        </a>
-        <div class="searcher">
-          <div class="upper">
-            <div class="info-icon">
-              <ion-icon name="information" style="border: 1px solid black;"></ion-icon>
-              <span style="margin-left: 8px;">Ayuda</span>
-            </div>
-          </div>
+      <div class="cont-head">
+        <div class="h-top">
+          <a href="#">
+            <ion-icon name="arrow-up" size="large" role="img" class="md icon-large hydrated" aria-label="arrow-up"></ion-icon>
+          </a>
+        </div>
+        <div class="h-logo">
+          <a href="/">
+            <h1>Sigma</h1>
+          </a>
+        </div>
+        <div class="h-busq-sm">
+          <ion-icon name="ios-search" size="large" role="img" class="md icon-large hydrated" aria-label="search"></ion-icon>
+        </div>
 
-          <div class="bottom">
-            <div class="searchbar">
-              <form class="searchbar" action="" method="get">
-                <input id="search-input" type="text" name="" value="" placeholder="Buscar en Sigma">
-                <button id="submit-input" type="submit" name="button"><ion-icon name="search" style="font-size: 20px;"></ion-icon></button>
-              </form>
-              <div class="search-mobile-help">
-                <ion-icon name="information" style="border: 1px solid black;"></ion-icon>
+        <div class="h-bar">
+          <div class="h-hiperv">
+            <a href="checkout.php">
+              <div class="h-icontext">
+                <div class="h-text">
+                  <a href="/carrito">Ver carrito</a>
+                </div>
+                <div class="h-icon">
+                  <ion-icon class="nav-icon" name="cart"></ion-icon>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Authentication Links -->
+          <div class="h-hiperv">
+
+              <div class="h-icontext">
+                @guest
+                  <div class="h-text">
+                    Mi Cuenta
+                  </div>
+                @else
+                  <div class="h-text">
+                    {{ ucfirst(Auth::user()->first_name) }}
+                  </div>
+                @endguest
+                <div class="h-icon">
+                  <ion-icon class="nav-icon" name="person"></ion-icon>
+                </div>
+              </div>
+
+            <div class="submenu">
+              <div class="h-icontext">
+                @guest
+                  <div class="h-text">
+                    <a href="/login">Iniciar Sesion</a>
+                    <a href="/register">Registrarse</a>
+                  </div>
+                @else
+                  <div class="h-text">
+                    <a href="/perfil">Mi cuenta</a>
+                    <form class="" action="{{ route('logout') }}" method="post">
+                      @csrf
+                      <button type="submit" name="button">Desconectarse</button>
+                    </form>
+                  </div>
+                @endguest
               </div>
             </div>
           </div>
         </div>
-
-        <div class="actions">
-          <div class="upper">
-            <div class="user">
-              <ion-icon name="person"></ion-icon>
-              <span>Mi Cuenta</span>
-            </div>
-            <div class="checkout">
-              <ion-icon name="cart"></ion-icon>
-              <span>Mi Carro</span>
-            </div>
-          </div>
-          <div class="bottom">
-
-          </div>
-        </div>
       </div>
-      <div class="categories">
-        <div class="title-explorer">
-        <span>Explorar por categoría: </span>
-        </div>
 
-        <div class="categories-names">
-          <ul>
-            <li>Remeras</li>
-            <li>Pantalones</li>
-            <li>Black Widow's choice</li>
-            <li>Martillos</li>
-          </ul>
-        </div>
+      <div class="cont-head-b">
+        <form class="form-busq" action="index.html" method="get">
+          <div class="h-categorias">
+            <div class="cate-text">
+              Categorías
+            </div>
+            <div class="cate-icon">
+              <ion-icon name="arrow-dropdown"></ion-icon>
+            </div>
+          </div>
+          <div class="busq-input">
+            <input type="text" name="search" value="" class="search" autocomplete="off">
+          </div>
+          <div class="busq-icon">
+            <ion-icon name="ios-search" role="img" aria-label="search"></ion-icon>
+          </div>
+        </form>
       </div>
     </header>
     <main>
@@ -129,7 +158,8 @@
       </div>
     </footer>
     @yield ('scripts')
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <script type="text/javascript" src="/js/master.js"></script>
+    
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
