@@ -25,6 +25,13 @@ Cargar Producto
       </div>
 
       <div class="form-group row">
+        <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>
+        <div class="col-sm-10">
+          <input name="precio" type="number" class="form-control" id="inputPrecio">
+        </div>
+      </div>
+
+      <div class="form-group row">
         <label for="inputDetalle" class="col-sm-2 col-form-label">Detalle</label>
         <div class="col-sm-10">
           <textarea name="descripcion" class="form-control" aria-label="With textarea"></textarea>
@@ -53,11 +60,11 @@ Cargar Producto
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Categoría.</label>
         <div class="col-sm-10">
-          <select class="form-control">
+          <select name="categoria_id" class="form-control">
             <option>Seleccione una categoría</option>
-            @for ($i=0; $i < 10; $i++)
-              <option value="">Categoría {{$i+1}}</option>
-            @endfor
+            @foreach ($categorias as $categoria)
+              <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+            @endforeach
           </select>
         </div>
       </div>
@@ -65,7 +72,7 @@ Cargar Producto
       <div class="form-group row">
         <label for="inputStock" class="col-sm-2 col-form-label">Stock disponible.</label>
         <div class="col-sm-10">
-          <input type="number" class="form-control" id="inputStock">
+          <input name="stock" type="number" class="form-control" id="inputStock">
         </div>
       </div>
 

@@ -25,14 +25,17 @@ Home
 
 <section class="productos">
 
-@for ($i=0; $i < 4; $i++)
+@forelse ($productos as $producto)
   <article class="producto">
       <a href="/producto">
         <img src="/img/macbook.jpg" alt="Macbook">
-        <p>Macbook Infinity 2019</p>
+        <p>{{$producto->titulo}}</p>
+        <p><b>{{$producto->precio}}$ ARS - {{$producto->stock}} disponibles</b></p>
       </a>
     </article>
-@endfor
+@empty
+  <h3>No hay productos actualmente disponibles, disculpe las molestias</h3>
+@endforelse
 
   <div class="banner">
     <div class="banner-text">
@@ -44,7 +47,7 @@ Home
     </div>
   </div>
 
-  @for ($i=0; $i < 3; $i++)
+  @for ($i=0; $i < 2; $i++)
     <article class="producto">
         <a href="producto.php">
           <img src="/img/macbook.jpg" alt="Macbook">

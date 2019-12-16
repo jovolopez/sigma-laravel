@@ -6,13 +6,7 @@ use Illuminate\Http\Request;
 
 class PerfilController extends Controller
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
 
-   //Middleware para estar autenticado.
   public function __construct()
   {
       $this->middleware('auth');
@@ -22,4 +16,5 @@ class PerfilController extends Controller
   {
       return view('perfil');
   }
+  
 }

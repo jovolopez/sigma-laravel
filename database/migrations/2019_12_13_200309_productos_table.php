@@ -11,6 +11,7 @@ class ProductosTable extends Migration
       Schema::create('productos', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->string('titulo');
+          $table->bigInteger('precio');
           $table->string('descripcion');
           $table->bigInteger('categoria_id')->unsigned();
           $table->foreign('categoria_id')->references('id')->on('categorias');
