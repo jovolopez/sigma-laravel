@@ -46,7 +46,7 @@
               <div class="h-icontext">
                 @guest
                   <div class="h-text">
-                    Mi Cuenta
+                    <p>Mi Cuenta</p>
                   </div>
                 @else
                   <div class="h-text">
@@ -58,17 +58,18 @@
                 </div>
               </div>
 
-            <div class="submenu">
-              <div class="h-icontext">
+              <div class="submenu">
                 @guest
                   <div class="h-text">
                     <a href="/login">Iniciar Sesion</a>
                     <a href="/register">Registrarse</a>
                   </div>
                 @else
-                  <div class="h-text">
+                  <div class="sub-text">
                     <a href="/perfil">Mi cuenta</a>
-                    <form class="" action="{{ route('logout') }}" method="post">
+                  </div>
+                  <div class="sub-text">
+                    <form class="logout" action="{{ route('logout') }}" method="post">
                       @csrf
                       <button type="submit" name="button">Desconectarse</button>
                     </form>
@@ -104,8 +105,8 @@
     </main>
     <div class="nav-menu">
       <div><a href="/"><ion-icon class="nav-icon" name="home"></ion-icon></a></div>
-      <div><a href="list.php"><ion-icon class="nav-icon" name="list"></ion-icon></a></div>
-      <div><a href="checkout.php"><ion-icon class="nav-icon" name="cart"></ion-icon></a></div>
+      <div><a href="lista"><ion-icon class="nav-icon" name="list"></ion-icon></a></div>
+      <div><a href="carrito"><ion-icon class="nav-icon" name="cart"></ion-icon></a></div>
       <div><a href="perfil"><ion-icon class="nav-icon" name="person"></ion-icon></a></div>
     </div>
     <footer>
@@ -158,7 +159,7 @@
       </div>
     </footer>
     @yield ('scripts')
-    
+
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
   </body>

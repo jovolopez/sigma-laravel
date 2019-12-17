@@ -77,21 +77,33 @@ Lista
     </div>
   </div>
   <section class="productos">
-    @for ($i=0; $i < 9; $i++)
+
+    @forelse ($productos as $producto)
+
       <article class="producto">
-      <div class="imagen-p">
-      <img src="img/macbook.jpg" alt="Macbook">
-      </div>
-      <div class="info-p">
-      <p class="titulo-p">Macbook i5 OFERTA DEL AÑO</p>
-      <p><b>1303$ ARS</b> 20%off</p>
-      <label for="">Buenos Aires</label>
-      </div>
-      <div class="fav-p">
-      <ion-icon name="heart-empty"></ion-icon>
-      </div>
+        <div class="imagen-p">
+          <img src="img/macbook.jpg" alt="Macbook">
+        </div>
+        <div class="info-p">
+          <p class="titulo-p">{{$producto['titulo']}}</p>
+          @if ($producto['stock'] == null)
+            <p style="text-decoration: line-through;">{{$producto['precio']}}$ ARS</p>
+            <p style="color: red;">Fuera de stock</p>
+          @else
+            <p><b>{{$producto['precio']}}$ ARS</b>
+            {{$producto['stock']}} restantes</p>
+          @endif
+          <label for="">{{$producto->categoria->nombre}}</label>
+        </div>
+        <div class="fav-p">
+          <ion-icon name="heart-empty"></ion-icon>
+        </div>
       </article>
-    @endfor
+
+    @empty
+      <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
+    @endforelse
+
   </section>
 </div>
 @endsection

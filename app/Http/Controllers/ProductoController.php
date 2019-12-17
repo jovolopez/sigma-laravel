@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Categoria;
 
 class ProductoController extends Controller
 {
+  
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   public function showForm()
   {
-      return view('cargarProducto');
+    $categorias = Categoria::all();
+    return view('cargarProducto', compact('categorias'));
   }
 
   public function showProduct(){
@@ -20,7 +28,10 @@ class ProductoController extends Controller
     $producto = new Producto();
 
     $producto->titulo = request('titulo');
+    $producto->precio = request('precio');
     $producto->descripcion = request('descripcion');
+    $producto->categoria_id = request('categoria_id');
+    $producto->stock = request('stock');
 
     $producto->save();
 
