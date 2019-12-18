@@ -22,3 +22,6 @@ Route::get('/producto', 'ProductoController@showProduct');
 
 //Vista lista
 Route::get('/lista', 'ListaController@show');
+
+//Vista preguntas
+Route::get('/preguntas', 'PreguntasController@show');
