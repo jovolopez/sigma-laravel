@@ -14,13 +14,17 @@ Cargar Producto
   <div class="container" style="min-height: 50vh;">
     <h1>Cargar producto nuevo.</h1>
 
-    <form class="" action="productsaction" method="post">
+    <form id="formulario" class="" action="productsaction" method="post">
       @csrf
 
       <div class="form-group row">
         <label for="inputNombre" class="col-sm-2 col-form-label">Nombre del producto</label>
         <div class="col-sm-10">
-          <input name="titulo" type="text" class="form-control" id="inputNombre">
+          <input name="titulo" type="text" class="form-control" id="inputNombre" autocomplete="off">
+
+          <div id="nombrefeedback" class="invalid-feedback">
+            Ingrese un nombre
+          </div>
         </div>
       </div>
 
@@ -28,51 +32,59 @@ Cargar Producto
         <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>
         <div class="col-sm-10">
           <input name="precio" type="number" class="form-control" id="inputPrecio">
+
+          <div id="preciofeedback" class="invalid-feedback">
+            Ingrese un precio.
+          </div>
         </div>
       </div>
 
       <div class="form-group row">
         <label for="inputDetalle" class="col-sm-2 col-form-label">Detalle</label>
         <div class="col-sm-10">
-          <textarea name="descripcion" class="form-control" aria-label="With textarea"></textarea>
+          <textarea id="inputDetalle" autocomplete="off" name="descripcion" class="form-control" aria-label="With textarea"></textarea>
+
+          <div id="detallefeedback" class="invalid-feedback">
+            Ingrese el detalle del producto.
+          </div>
         </div>
       </div>
 
       <div class="form-group row">
-        <label for="inputFoto" class="col-sm-2 col-form-label">Imagenes</label>
+        <label for="inputFoto" class="col-sm-2 col-form-label">Imagen</label>
         <div class="col-md-2">
-          <input type="file" class="form-control-file" id="inputFoto">
-        </div>
-        <div class="col-md-2">
-          <input type="file" class="form-control-file" id="inputFoto">
-        </div>
-        <div class="col-md-2">
-          <input type="file" class="form-control-file" id="inputFoto">
-        </div>
-        <div class="col-md-2">
-          <input type="file" class="form-control-file" id="inputFoto">
-        </div>
-        <div class="col-md-2">
-          <input type="file" class="form-control-file" id="inputFoto">
+          <input id="inputImagen" type="file" class="form-control-file" id="inputFoto">
+
+          <div id="imagenfeedback" class="invalid-feedback">
+            La imagen no puede estar vacía.
+          </div>
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Categoría.</label>
         <div class="col-sm-10">
-          <select name="categoria_id" class="form-control">
+          <select id="inputCategoria" name="categoria_id" class="form-control">
             <option>Seleccione una categoría</option>
             @foreach ($categorias as $categoria)
               <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
             @endforeach
           </select>
+
+          <div id="categoriafeedback" class="invalid-feedback">
+            Seleccione una categoria.
+          </div>
         </div>
       </div>
 
       <div class="form-group row">
         <label for="inputStock" class="col-sm-2 col-form-label">Stock disponible.</label>
         <div class="col-sm-10">
-          <input name="stock" type="number" class="form-control" id="inputStock">
+          <input id="inputStock" name="stock" type="number" class="form-control" id="inputStock">
+
+          <div id="stockfeedback" class="invalid-feedback">
+            Ingrese las unidades disponibles.
+          </div>
         </div>
       </div>
 
@@ -85,5 +97,6 @@ Cargar Producto
 
   </div>
 
+<script type="text/javascript" src="/js/cargaProducto.js" ></script>
 
 @endsection
