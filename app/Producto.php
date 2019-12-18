@@ -14,4 +14,3 @@ class Producto extends Model
       return $this->belongsTo('App\Categoria', 'categoria_id');
     }
 }
-//hello 2

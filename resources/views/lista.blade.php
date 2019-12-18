@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-  <link rel="stylesheet" href="css/lista.css">
+  <link rel="stylesheet" href="/css/lista.css">
 @endsection
 @section('title')
 Lista
@@ -11,6 +11,9 @@ Lista
     <div class="opt-text">
       Filtros
     </div>
+    @if ($vac[2] >= 1)
+      <a href="/lista">Eliminar filtros</a>
+    @endif
     <div class="fil-icon">
       <ion-icon name="options"></ion-icon>
     </div>
@@ -18,6 +21,11 @@ Lista
   <form class="fil-sec-opt" action="list.php" method="get">
     <div class="fil-sec-titu">Tipo</div>
     <ul>
+      @forelse ($vac[1] as $categoria)
+        <a href="/lista/{{$categoria->id}}"><li><input type="radio" name="tipo"> {{$categoria->nombre}}</li></a>
+      @empty
+        <h2>No hay categorías disponibles</h2>
+      @endforelse
       <li><input type="radio" name="tipo" value="remeras"> Remeras</li>
       <li><input type="radio" name="tipo" value="pantal"> Pantalones</li>
       <li><input type="radio" name="tipo" value="calzado"> Calzado</li>
@@ -78,11 +86,11 @@ Lista
   </div>
   <section class="productos">
 
-    @forelse ($productos as $producto)
-
+    @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
+      <a href="/producto/{{$producto->id}}">
       <article class="producto">
         <div class="imagen-p">
-          <img src="img/macbook.jpg" alt="Macbook">
+          <img src="/img/macbook.jpg" alt="Macbook">
         </div>
         <div class="info-p">
           <p class="titulo-p">{{$producto['titulo']}}</p>
@@ -99,6 +107,7 @@ Lista
           <ion-icon name="heart-empty"></ion-icon>
         </div>
       </article>
+      </a>
 
     @empty
       <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
