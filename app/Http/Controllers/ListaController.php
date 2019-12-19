@@ -16,4 +16,12 @@ class listaController extends Controller
     return view('lista', compact('productos'));
   }
 
+  public function search(Request $request)
+  {
+    $search = '%' . trim($request->input('search') . '%');
+    $productos = Producto::where('titulo', 'LIKE', $search)->get();
+
+    return view('lista', compact('productos'));
+  }
+
 }
