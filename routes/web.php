@@ -22,3 +22,9 @@ Route::get('/producto', 'ProductoController@showProduct');
 
 //Vista lista
 Route::get('/lista', 'ListaController@show');
+
+//Editor de Productos (Vista)
+Route::get('/editar/{id}', 'ProductoController@showEditProduct')->middleware('admin');
+
+//Editor de Productos (Back)
+Route::post('/editar', 'ProductoController@editProduct')->middleware('admin');

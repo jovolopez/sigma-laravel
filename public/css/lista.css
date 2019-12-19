@@ -56,11 +56,28 @@ main{
 .titulo-p{
   font-size: 14px;
 }
-.fav-p{
+.opt-p{
   padding: 10px 0;
 }
-.fav-p ion-icon{
+.opt-p ion-icon{
   color: red;
+}
+.baja{
+  width: 80px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  background: #ffb8b8;
+  color: #6f0000;
+  margin: 0 0 10px 0;
+}
+.editar{
+  width: 80px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  background: #b8bcff;
+  color: #13006f;
 }
 body{
   font-family: 'Open Sans';

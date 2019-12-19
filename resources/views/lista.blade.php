@@ -95,7 +95,21 @@ Lista
           @endif
           <label for="">{{$producto->categoria->nombre}}</label>
         </div>
-        <div class="fav-p">
+        <div class="opt-p">
+        @if (Auth::user() && Auth::user()->is_admin == 1)
+          {{-- <form class="" action="/eliminarProducto" method="delete">
+            @csrf
+            <button type="button" name="button">
+            <div class="baja">
+              Bajar
+            </div>
+            </button>
+          </form> --}}
+          <a href="/editar/{{$producto->id}}">
+          <div class="editar">
+            Editar
+          </div></a>
+        @endif
           <ion-icon name="heart-empty"></ion-icon>
         </div>
       </article>
