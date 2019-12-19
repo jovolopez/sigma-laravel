@@ -19,7 +19,7 @@ FAQ
                     </div>
                   <button class="accordion">¿Que debo hacer si llega algun producto equivocado o en mal estado?</button>
                     <div class="panel">
-                      <p>Te pones en contacto con nosotros y te damos una solición.</p>
+                      <p>Te pones en contacto con nosotros y te damos una solución.</p>
                     </div>
                   <button class="accordion">¿Como puedo consultar el estado de mi pedido?</button>
                       <div class="panel">
@@ -27,11 +27,11 @@ FAQ
                       </div>
                   <button class="accordion">¿Cuales son los metodos de pago?</button>
                       <div class="panel">
-                        <p>Tenemos MercadoPago y PayPal</p>
+                        <p>Podes pagar con debito o credito, tambien tenemos MercadoPago y PayPal.</p>
                       </div>
                   <button class="accordion">¿Cuanto tarda en llegar mi pedido?</button>
                       <div class="panel">
-                        <p>La entrega se tarda de 4 dias a una semana</p>
+                        <p>La entrega se tarda de 4 dias a una semana, despues de procesado el pedido.</p>
                       </div>
                 </ul>
                     <hr size="1px" color="#ddd">
