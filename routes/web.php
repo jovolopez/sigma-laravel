@@ -25,3 +25,6 @@ Route::get('/lista', 'ListaController@show');
 
 //Vista preguntas
 Route::get('/preguntas', 'PreguntasController@show');
+
+//vista Contacto
+Route::get('/contacto', 'ContactoController@show');
