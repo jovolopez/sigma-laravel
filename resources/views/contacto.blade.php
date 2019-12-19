@@ -7,28 +7,31 @@ Contacto
 @endsection
 @section('main')
   <main class="container">
-        <form class="contact-form" action="index.php" method="post">
-          <h2>Contacto</h2>
-          <hr size="1px" color="#ddd">
+    <form class="contact-form" action="https://submit-form.com/5xdSTu1RXQY1UYbiTm69O" target="_self">
+
+      <h2>Contacto</h2>
+
+        <hr size="1px" color="#ddd">
+
           <div class="Nombre">
-            <label for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" id="Nombre" placeholder="Nombre">
-            </div>
-            <div class="E-mail">
-              <label for="E-mail">E-mail</label>
-              <input type="email" name="E-mail" id="E-mail" placeholder="E-mail">
-            </div>
-            <div class="Telefono">
-              <label for="Telefono">Telefono</label>
-              <input type="tel" name="Telefono" id="Telefono" placeholder="Telefono">
-            </div>
-            <div class="Mensaje">
-              <label for="Mensaje">Mensaje</label>
-              <textarea name="Mensaje" id="Mensaje" rows="8" cols="80" placeholder="Escriba aqui su mensaje..."></textarea>
-            </div>
-            <div class="Boton">
+            <input type="text" name="Nombre" placeholder="Nombre">
+          </div>
+          <div class="Telefono">
+              <input type="tel" name="Telefono" placeholder="Telefono">
+          </div>
+          <div class="E-mail">
+              <input type="text" name="email" placeholder="Email">
+          </div>
+          <div class="honeypot">
+            <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off"/>
+            <input type="hidden" name="_redirect" value="http://localhost:8000/"/>
+          </div>
+
+      <textarea name="mensaje" placeholder="Mensaje"></textarea>
+
+          <div class="Boton">
               <input type="submit" id="boton" value="Enviar">
-            </div>
-        </form>
-      </main>
+          </div>
+    </form>
+  </main>
 @endsection
