@@ -11,9 +11,6 @@ Lista
     <div class="opt-text">
       Filtros
     </div>
-    @if ($vac[2] >= 1)
-      <a href="/lista">Eliminar filtros</a>
-    @endif
     <div class="fil-icon">
       <ion-icon name="options"></ion-icon>
     </div>
@@ -22,17 +19,20 @@ Lista
     <div class="fil-sec-titu">Tipo</div>
     <ul>
       @forelse ($vac[1] as $categoria)
-        <a href="/lista/{{$categoria->id}}"><li><input type="radio" name="tipo"> {{$categoria->nombre}}</li></a>
+        @if ($categoria->id == $vac[2])
+          <a href="/lista">
+          <div class="fil-delete">
+            {{$vac[0][0]->categoria->nombre}} ✗
+          </div>
+          </a>
+        @else
+          <div class="fil-categoria">
+            <a href="/lista/{{$categoria->id}}">{{$categoria->nombre}}</a>
+          </div>
+        @endif
       @empty
         <h2>No hay categorías disponibles</h2>
       @endforelse
-      <li><input type="radio" name="tipo" value="remeras"> Remeras</li>
-      <li><input type="radio" name="tipo" value="pantal"> Pantalones</li>
-      <li><input type="radio" name="tipo" value="calzado"> Calzado</li>
-      <li><input type="radio" name="tipo" value="buzos"> Buzos</li>
-      <li><input type="radio" name="tipo" value="camper"> Camperas</li>
-      <li><input type="radio" name="tipo" value="ropaint"> Ropa interior</li>
-      <li><input type="radio" name="tipo" value="acceso"> Accesorios</li>
     </ul>
   </form>
   <form class="fil-sec-opt" action="list.php" method="get">
