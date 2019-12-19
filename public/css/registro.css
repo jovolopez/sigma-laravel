@@ -11,6 +11,30 @@ main {
   justify-content: center;
   align-items: center;
 }
+.is-invalid {
+  border: solid red 1px !important;
+}
+.is-invalid-fb {
+  color: red;
+}
+.invalid-feedback {
+  display: none;
+  color: red;
+}
+meter {
+  margin: 0 auto 1em;
+  width: 100%;
+  height: 0.3em;
+
+  /* Applicable only to Firefox */
+  background: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+meter[value="1"]::-webkit-meter-optimum-value { background: #fa2a2a; }
+meter[value="2"]::-webkit-meter-optimum-value { background: #f2cb2e; }
+meter[value="3"]::-webkit-meter-optimum-value { background: #f2832e; }
+meter[value="4"]::-webkit-meter-optimum-value { background: #4aed4f; }
 .regis-form {
   font-size: 16px;
   background: white;

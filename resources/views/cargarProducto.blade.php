@@ -20,7 +20,7 @@ Cargar Producto
       <div class="form-group row">
         <label for="inputNombre" class="col-sm-2 col-form-label">Nombre del producto</label>
         <div class="col-sm-10">
-          <input name="titulo" type="text" class="form-control" id="inputNombre" autocomplete="off">
+          <input name="titulo" value="{{ old('titulo') }}" type="text" class="form-control" id="inputNombre" autocomplete="off">
 
           <div id="nombrefeedback" class="invalid-feedback">
             Ingrese un nombre
@@ -65,7 +65,7 @@ Cargar Producto
         <label class="col-sm-2 col-form-label">Categoría.</label>
         <div class="col-sm-10">
           <select id="inputCategoria" name="categoria_id" class="form-control">
-            <option>Seleccione una categoría</option>
+            <option value="0">Seleccione una categoría</option>
             @foreach ($categorias as $categoria)
               <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
             @endforeach

@@ -48,6 +48,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
           'first_name' => ['required', 'string', 'max:255'],
           'last_name' => ['required', 'string', 'max:255'],
@@ -68,11 +69,11 @@ class RegisterController extends Controller
         $ruta = '';
         if (isset($data['avatar'])) {
             //muevo el archivo
-            $ruta = $data['avatar']->store('public\avatars');
+            $ruta = $data['avatar']->store('public/avatars/');
             $ruta = basename($ruta);
 
             //Comprimir la imagen para que no ocupe tanto espacio.
-            $filepath = public_path('\\storage\\avatars\\'.$ruta);
+            $filepath = public_path('/storage/avatars/'.$ruta);
 
             try {
                 \Tinify\setKey("7rl2g2dfnNXgN51jJCgwGmXtRfqdhKwP");
