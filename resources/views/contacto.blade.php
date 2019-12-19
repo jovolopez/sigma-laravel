@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="/css/contacto.css">
 @endsection
 @section('title')
-FAQ
+Contato
 @endsection
 @section('main')
   <main class="container">
