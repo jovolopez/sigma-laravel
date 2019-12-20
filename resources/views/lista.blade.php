@@ -117,6 +117,11 @@ Lista
             Editar
           </div></a>
         @endif
+          <form class="" action="/agregarAlCarrito" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$producto->id}}">
+            <button class="baja"type="submit" name="button"><ion-icon name="cart"></ion-icon></button>
+          </form>
           <ion-icon name="heart-empty"></ion-icon>
           </a>
         </div>
