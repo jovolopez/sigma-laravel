@@ -23,6 +23,9 @@ Route::get('/producto/{id}', 'ProductoController@showProduct');
 //Vista lista
 Route::get('/lista', 'ListaController@show');
 
+//Vista Buscador
+Route::get('/search', 'ListaController@search');
+
 //Vista lista filtrada
 Route::get('lista/{id}', 'ListaController@show');
 
@@ -31,3 +34,6 @@ Route::get('/preguntas', 'PreguntasController@show');
 
 //vista Contacto
 Route::get('/contacto', 'ContactoController@show');
+
+//Vista Buscador
+Route::get('/search', 'ListaController@search');

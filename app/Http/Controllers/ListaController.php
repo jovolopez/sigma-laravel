@@ -29,4 +29,12 @@ class listaController extends Controller
     return view('lista', compact('vac'));
   }
 
+  public function search(Request $request)
+  {
+    $search = '%' . trim($request->input('search') . '%');
+    $productos = Producto::where('titulo', 'LIKE', $search)->get();
+
+    return view('lista', compact('productos'));
+  }
+
 }
