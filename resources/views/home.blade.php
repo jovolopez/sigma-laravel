@@ -27,7 +27,7 @@ Home
 
 @forelse ($productos as $producto)
   <article class="producto">
-      <a href="/producto">
+      <a href="/producto/{{$producto->id}}">
         <img src="/img/macbook.jpg" alt="Macbook">
         <p>{{$producto->titulo}}</p>
         <p><b>{{$producto->precio}}$ ARS - {{$producto->stock}} disponibles</b></p>

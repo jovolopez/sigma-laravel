@@ -18,10 +18,13 @@ Route::get('/cargarProducto', 'ProductoController@showForm')->middleware('admin'
 Route::post('/productsaction', 'ProductoController@saveProduct')->middleware('admin');
 
 //Vista producto
-Route::get('/producto', 'ProductoController@showProduct');
+Route::get('/producto/{id}', 'ProductoController@showProduct');
 
 //Vista lista
 Route::get('/lista', 'ListaController@show');
+
+//Vista lista filtrada
+Route::get('lista/{id}', 'ListaController@show');
 
 //Vista preguntas
 Route::get('/preguntas', 'PreguntasController@show');

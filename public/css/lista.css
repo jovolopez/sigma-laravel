@@ -17,6 +17,25 @@ main{
   font-size: 14px;
   margin-bottom: 10px;
 }
+.fil-delete{
+  display: inline-block;
+  width: max-content;
+  padding: 0 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  background: #ffc8c8;
+  transition: all 0.3s;
+}
+.fil-delete:hover{
+  background: #fff1f1;
+}
+.fil-categoria{
+  display: block;
+  width: 50%;
+  padding: 0 5px;
+  font-size: 14px;
+  border-bottom: 1px solid gainsboro;
+}
 .fil-sec-opt{
   margin-bottom: 25px;
 }
