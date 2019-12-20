@@ -11,7 +11,7 @@ Producto
   <div class="producto">
     @if ($producto != null)
       <div class="imagen">
-        <img src="/img/macbook.jpg" alt="">
+        <img style="max-width: 300px;" src="/storage/productos/{{$producto->foto}}" alt="">
       </div>
       <div class="descripcion">
         <a href="/lista/{{$producto->categoria->id}}"><p>{{$producto->categoria->nombre}} /</p></a>
@@ -47,7 +47,7 @@ Producto
                 <a href="/producto/{{$prod->id}}">
                 <h3>{{$prod->titulo}}</h3>
                 <p>{{$prod->precio}} $ ARS</p>
-                <img src="/img/iphone.png" alt="">
+                <img style="max-height: 300px;" src="/storage/productos/{{$prod->foto}}" alt="">
                 </a>
               </article>
             @endif

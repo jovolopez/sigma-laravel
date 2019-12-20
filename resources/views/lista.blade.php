@@ -91,7 +91,7 @@ Lista
     @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
       <article class="producto">
         <div class="imagen-p">
-          <a href="/producto/{{$producto->id}}"><img src="/img/macbook.jpg" alt="Macbook"></a>
+          <a href="/producto/{{$producto->id}}"><img style="width:125px; height: 125px;" src="/storage/productos/{{$producto->foto}}" alt="Macbook"></a>
         </div>
         <div class="info-p">
           <a href="/producto/{{$producto->id}}"><p class="titulo-p">{{$producto['titulo']}}</p>
