@@ -22,7 +22,7 @@ Lista
         @if ($categoria->id == $vac[2])
           <a href="/lista">
           <div class="fil-delete">
-            {{$vac[0][0]->categoria->nombre}} ✗
+            {{$vac[0][0]->categoria->nombre}} ✗</a>
           </div>
           </a>
         @else
@@ -87,13 +87,12 @@ Lista
   <section class="productos">
 
     @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
-      <a href="/producto/{{$producto->id}}">
       <article class="producto">
         <div class="imagen-p">
-          <img src="/img/macbook.jpg" alt="Macbook">
+          <a href="/producto/{{$producto->id}}"><img src="/img/macbook.jpg" alt="Macbook"></a>
         </div>
         <div class="info-p">
-          <p class="titulo-p">{{$producto['titulo']}}</p>
+          <a href="/producto/{{$producto->id}}"><p class="titulo-p">{{$producto['titulo']}}</p>
           @if ($producto['stock'] == null)
             <p style="text-decoration: line-through;">{{$producto['precio']}}$ ARS</p>
             <p style="color: red;">Fuera de stock</p>
@@ -102,9 +101,12 @@ Lista
             {{$producto['stock']}} restantes</p>
           @endif
           <label for="">{{$producto->categoria->nombre}}</label>
+          </a>
         </div>
         <div class="fav-p">
+          <a href="/">
           <ion-icon name="heart-empty"></ion-icon>
+          </a>
         </div>
       </article>
       </a>
