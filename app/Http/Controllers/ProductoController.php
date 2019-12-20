@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Categoria;
+use App\Carrito;
+use App\User;
+use Auth;
 
 class ProductoController extends Controller
 {
@@ -117,4 +120,36 @@ class ProductoController extends Controller
     Producto::find($request->id)->delete();
     return redirect('/lista')->with('status', 'Producto eliminado')->with('operation', 'success');
   }
+
+  public function addToCart(Request $request)
+  {
+        if (Auth::user()){
+
+            $productos = Producto::find($request->id);
+            $oldcarrito = Carrito::where('usuario_id', Auth::user()->id)->where('producto_id', $request->id);
+
+            if($oldcarrito->exists()){
+                $articulo = $oldcarrito->get()->first();
+                $articulo->cantidad++;
+                $articulo->save();
+            }else{
+                $carrito = new Carrito();
+                $carrito->cantidad = 1;
+                $carrito->producto_id = $productos->id;
+                $carrito->usuario_id = Auth::user()->id;
+                $carrito->estado = 'Pendiente de pago';
+                $carrito->save();
+            }
+            $carritos = Carrito::where('usuario_id', Auth::user()->id)->get();
+            $total = 0;
+            foreach ($carritos as $producto) {
+              $total = $total + $producto->producto()->get()->first()->precio;
+            }
+            $vac = [$carritos, $total];
+            return view("/carrito", compact('vac'));
+        }
+        else {
+            return redirect("/login");
+        }
+    }
 }
