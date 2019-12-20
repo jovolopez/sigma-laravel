@@ -19,7 +19,7 @@ Lista
     <div class="fil-sec-titu">Tipo</div>
     <ul>
       @forelse ($vac[1] as $categoria)
-        @if ($categoria->id == $vac[2])
+        @if (isset($vac[2]) && $categoria->id == $vac[2])
           <a href="/lista">
           <div class="fil-delete">
             {{$vac[0][0]->categoria->nombre}} ✗</a>

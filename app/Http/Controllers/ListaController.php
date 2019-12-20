@@ -17,7 +17,7 @@ class listaController extends Controller
     if (!is_numeric($filter)) {
       $filter = 0;
     }
-    
+
     $productos = Producto::all();
     $categorias = Categoria::all();
 
@@ -33,8 +33,11 @@ class listaController extends Controller
   {
     $search = '%' . trim($request->input('search') . '%');
     $productos = Producto::where('titulo', 'LIKE', $search)->get();
+    $categorias = Categoria::all();
 
-    return view('lista', compact('productos'));
+    $vac = [$productos, $categorias];
+
+    return view('lista', compact('vac'));
   }
 
 }
