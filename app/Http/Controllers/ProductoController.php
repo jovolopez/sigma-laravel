@@ -152,4 +152,14 @@ class ProductoController extends Controller
             return redirect("/login");
         }
     }
+    public function showCart($value='')
+    {
+      $carritos = Carrito::where('usuario_id', Auth::user()->id)->get();
+      $total = 0;
+      foreach ($carritos as $producto) {
+        $total = $total + $producto->producto()->get()->first()->precio;
+      }
+      $vac = [$carritos, $total];
+      return view("/carrito", compact('vac'));
+    }
 }
