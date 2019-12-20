@@ -48,3 +48,9 @@ Route::get('/search', 'ListaController@search');
 
 //Agregar Producto al carrito
 Route::post("/agregarAlCarrito","ProductoController@addToCart");
+
+//Vista Carrito
+Route::get("/carrito", "ProductoController@showCart");
+
+//Sacar Producto de carrito
+Route::post("/sacarDelCarrito","ProductoController@removeToCart");

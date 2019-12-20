@@ -152,4 +152,21 @@ class ProductoController extends Controller
             return redirect("/login");
         }
     }
+    public function showCart($value='')
+    {
+      $carritos = Carrito::where('usuario_id', Auth::user()->id)->get();
+      $total = 0;
+      foreach ($carritos as $producto) {
+        $total = $total + $producto->producto()->get()->first()->precio;
+      }
+      $vac = [$carritos, $total];
+      return view("/carrito", compact('vac'));
+    }
+
+    public function removeToCart(Request $request)
+    {
+      if (Auth::user()){
+        Carrito::where('usuario_id', Auth::user()->id)->where('producto_id', $request->id)->delete();return redirect('/carrito')->with('status', 'Producto eliminado')->with('operation', 'success');
+      }
+    }
 }
