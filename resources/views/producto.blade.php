@@ -23,9 +23,12 @@ Producto
         <p>{{$producto->descripcion}}</p>
       </div>
       <div class="acciones">
+        <form class="" action="/agregarAlCarrito" method="post">
+          @csrf
+          <input type="hidden" name="id" value="{{$producto->id}}">
           <input id="comprar" type="submit" name="" value="Comprar">
-
           <input id="agregar" type="submit" name="" value="Agregar al carrito">
+        </form>
       </div>
       <div class="medios-de-pago">
         <img src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/468X60.jpg" title="MercadoPago - Medios de pago" alt="MercadoPago - Medios de pago" width="468" height="60"/>
