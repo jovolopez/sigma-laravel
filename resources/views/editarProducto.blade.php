@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('css')
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/editarProducto.css">
 @endsection
 @section('title')
 Cargar Producto
@@ -14,9 +15,9 @@ Cargar Producto
   <div class="container" style="min-height: 50vh;">
     <h1>Editar {{$vac[0]->titulo}}.</h1>
 
-    <form class="" action="editProduct" method="post" enctype="multipart/form-data">
+    <form class="" action="/editarProducto" method="post" enctype="multipart/form-data">
       @csrf
-
+      <input type="hidden" name="id" value="{{$vac[0]->id}}">
       <div class="form-group row">
         <label for="inputNombre" class="col-sm-2 col-form-label">Nombre del producto</label>
         <div class="col-sm-10">
@@ -32,9 +33,9 @@ Cargar Producto
       </div>
 
       <div class="form-group row">
-        <label for="inputDetalle" class="col-sm-2 col-form-label">Detalle</label>
+        <label for="inputDesc" class="col-sm-2 col-form-label">Detalle</label>
         <div class="col-sm-10">
-          <textarea name="descripcion" class="form-control" value="{{$vac[0]->descripcion}}" aria-label="With textarea"></textarea>
+          <textarea name="descripcion" id="inputDesc" class="form-control" value="" aria-label="With textarea">{{$vac[0]->descripcion}}</textarea>
         </div>
       </div>
 
@@ -68,7 +69,7 @@ Cargar Producto
 
       <div class="form-group row">
         <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary">Previsualizar producto.</button>
+          <button type="submit" class="btn btn-primary">Modificar producto</button>
         </div>
       </div>
     </form>

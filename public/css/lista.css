@@ -70,6 +70,15 @@ main{
   background: #ffb8b8;
   color: #6f0000;
   margin: 0 0 10px 0;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-size: 1em;
+  border: none;
+  height: 28px;
+  outline: none;
+}
+.baja:hover{
+  background: #ffd7d7;
 }
 .editar{
   width: 80px;
@@ -78,6 +87,10 @@ main{
   border-radius: 3px;
   background: #b8bcff;
   color: #13006f;
+  transition: all 0.3s;
+}
+.editar:hover{
+  background: #dbddff;
 }
 body{
   font-family: 'Open Sans';

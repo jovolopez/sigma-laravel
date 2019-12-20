@@ -32,6 +32,7 @@ class ProductoController extends Controller
 
     return redirect('/');
   }
+
   public function showEditProduct($id = 1)
   {
     if (!is_numeric($id)) {
@@ -44,9 +45,9 @@ class ProductoController extends Controller
     return view('editarProducto', compact('vac'));
   }
 
-  public function editProduct(Request $request, $id)
+  public function editProduct(Request $request)
   {
-    $producto = Movie::find($id);
+    $producto = Producto::find($request->id);
 
     if ($request->file('foto')) {
         $imagen = $request->file('foto')->store('public/img');
@@ -62,6 +63,12 @@ class ProductoController extends Controller
 
     $producto->save();
 
-    return redirect('/movies')->with('status', 'Producto modificado')->with('operation', 'success');
+    return redirect('/')->with('status', 'Producto modificado')->with('operation', 'success');
+  }
+
+  public function downProduct(Request $request)
+  {
+    Producto::find($request->id)->delete();
+    return redirect('/lista')->with('status', 'Producto eliminado')->with('operation', 'success');
   }
 }

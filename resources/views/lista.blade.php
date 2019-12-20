@@ -97,14 +97,11 @@ Lista
         </div>
         <div class="opt-p">
         @if (Auth::user() && Auth::user()->is_admin == 1)
-          {{-- <form class="" action="/eliminarProducto" method="delete">
+          <form class="" action="/borrarProducto" method="post">
             @csrf
-            <button type="button" name="button">
-            <div class="baja">
-              Bajar
-            </div>
-            </button>
-          </form> --}}
+              <input type="hidden" name="id" value="{{$producto->id}}">
+              <button class="baja"type="submit" name="button">Eliminar</button>
+          </form>
           <a href="/editar/{{$producto->id}}">
           <div class="editar">
             Editar
