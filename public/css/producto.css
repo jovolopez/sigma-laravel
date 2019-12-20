@@ -18,6 +18,7 @@
 .producto {
   width: 95%;
   margin-top: 3.2em;
+  max-width: 1200px;
 }
 
 .imagen {
