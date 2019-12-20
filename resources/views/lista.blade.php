@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-  <link rel="stylesheet" href="css/lista.css">
+  <link rel="stylesheet" href="/css/lista.css">
 @endsection
 @section('title')
 Lista
@@ -18,13 +18,21 @@ Lista
   <form class="fil-sec-opt" action="list.php" method="get">
     <div class="fil-sec-titu">Tipo</div>
     <ul>
-      <li><input type="radio" name="tipo" value="remeras"> Remeras</li>
-      <li><input type="radio" name="tipo" value="pantal"> Pantalones</li>
-      <li><input type="radio" name="tipo" value="calzado"> Calzado</li>
-      <li><input type="radio" name="tipo" value="buzos"> Buzos</li>
-      <li><input type="radio" name="tipo" value="camper"> Camperas</li>
-      <li><input type="radio" name="tipo" value="ropaint"> Ropa interior</li>
-      <li><input type="radio" name="tipo" value="acceso"> Accesorios</li>
+      @forelse ($vac[1] as $categoria)
+        @if (isset($vac[2]) && $categoria->id == $vac[2])
+          <a href="/lista">
+          <div class="fil-delete">
+            {{$categoria->nombre}} ✗</a>
+          </div>
+          </a>
+        @else
+          <div class="fil-categoria">
+            <a href="/lista/{{$categoria->id}}">{{$categoria->nombre}}</a>
+          </div>
+        @endif
+      @empty
+        <h2>No hay categorías disponibles</h2>
+      @endforelse
     </ul>
   </form>
   <form class="fil-sec-opt" action="list.php" method="get">
@@ -77,15 +85,16 @@ Lista
     </div>
   </div>
   <section class="productos">
-
-    @forelse ($productos as $producto)
-
+    @if (!$vac[0])
+      <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
+    @else
+    @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
       <article class="producto">
         <div class="imagen-p">
-          <img src="img/macbook.jpg" alt="Macbook">
+          <a href="/producto/{{$producto->id}}"><img style="width:125px; height: 125px;" src="/storage/productos/{{$producto->foto}}" alt="Macbook"></a>
         </div>
         <div class="info-p">
-          <p class="titulo-p">{{$producto['titulo']}}</p>
+          <a href="/producto/{{$producto->id}}"><p class="titulo-p">{{$producto['titulo']}}</p>
           @if ($producto['stock'] == null)
             <p style="text-decoration: line-through;">{{$producto['precio']}}$ ARS</p>
             <p style="color: red;">Fuera de stock</p>
@@ -94,16 +103,35 @@ Lista
             {{$producto['stock']}} restantes</p>
           @endif
           <label for="">{{$producto->categoria->nombre}}</label>
+          </a>
         </div>
-        <div class="fav-p">
+        <div class="opt-p">
+        @if (Auth::user() && Auth::user()->is_admin == 1)
+          <form class="" action="/borrarProducto" method="post">
+            @csrf
+              <input type="hidden" name="id" value="{{$producto->id}}">
+              <button class="baja"type="submit" name="button">Eliminar</button>
+          </form>
+          <a href="/editar/{{$producto->id}}">
+          <div class="editar">
+            Editar
+          </div></a>
+        @endif
+          <form class="" action="/agregarAlCarrito" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$producto->id}}">
+            <button class="baja"type="submit" name="button"><ion-icon name="cart"></ion-icon></button>
+          </form>
           <ion-icon name="heart-empty"></ion-icon>
+          </a>
         </div>
       </article>
+      </a>
 
     @empty
       <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
     @endforelse
-
+    @endif
   </section>
 </div>
 @endsection

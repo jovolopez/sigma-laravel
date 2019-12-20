@@ -27,8 +27,8 @@ Home
 
 @forelse ($productos as $producto)
   <article class="producto">
-      <a href="/producto">
-        <img src="/img/macbook.jpg" alt="Macbook">
+      <a href="/producto/{{$producto->id}}">
+        <img style="width: 100%; height: 300px;" src="/storage/productos/{{$producto->foto}}" alt="Macbook">
         <p>{{$producto->titulo}}</p>
         <p><b>{{$producto->precio}}$ ARS - {{$producto->stock}} disponibles</b></p>
       </a>
@@ -36,7 +36,5 @@ Home
 @empty
   <h3>No hay productos actualmente disponibles, disculpe las molestias</h3>
 @endforelse
-
-
 </section>
 @endsection

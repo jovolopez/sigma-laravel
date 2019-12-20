@@ -82,7 +82,8 @@
       </div>
 
       <div class="cont-head-b">
-        <form class="form-busq" action="index.html" method="get">
+        <form class="form-busq" action="/search" method="get">
+          @csrf
           <div class="h-categorias">
             <div class="cate-text">
               Categorías
@@ -92,7 +93,7 @@
             </div>
           </div>
           <div class="busq-input">
-            <input type="text" name="search" value="" class="search" autocomplete="off">
+            <input type="text" name="search" id ="search" class="search" autocomplete="off" placeholder="Buscar en Sigma">
           </div>
           <div class="busq-icon">
             <ion-icon name="ios-search" role="img" aria-label="search"></ion-icon>
@@ -136,6 +137,10 @@
           <div class="acercaDe">
             <h3>Sobre Nosotros</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <br>
+            <div class="help">
+              <h4><a href="/preguntas">Ayuda - Preguntas frecuentes - Contacto </a></h4>
+            </div>
           </div>
         </div>
 

@@ -209,7 +209,7 @@ footer {
     align-items: center;
   }
 
-  .izq {
+  .izq,.help {
     width: 100%;
     text-align: center;
   }
@@ -246,6 +246,13 @@ footer {
 
 }
 
+.help{
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: fit-content;
+}
+
 @media (max-width:1023px) {
   .h-bar{
     display: none;
@@ -273,8 +280,10 @@ footer {
     align-items: center;
   }
   .search{
+    padding-left: 10px;
+    font-size: 14px;
     width: 400px;
-    height: 25px;
+    height: 30px;
     margin: 5px 0;
     background: #ececec;
     border-radius: 10px;
