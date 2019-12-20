@@ -6,14 +6,27 @@ use Illuminate\Http\Request;
 
 use App\Producto;
 
+use App\Categoria;
+
 class listaController extends Controller
 {
 
-  public function show()
+  public function show($filter = 0)
   {
-    $productos = Producto::all();
 
-    return view('lista', compact('productos'));
+    if (!is_numeric($filter)) {
+      $filter = 0;
+    }
+    
+    $productos = Producto::all();
+    $categorias = Categoria::all();
+
+    if ($filter) {
+     $productos = Producto::where('categoria_id', $filter)->get();
+    }
+
+    $vac = [$productos, $categorias, $filter];
+    return view('lista', compact('vac'));
   }
 
   public function search(Request $request)

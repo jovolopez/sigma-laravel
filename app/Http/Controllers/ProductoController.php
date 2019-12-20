@@ -15,8 +15,10 @@ class ProductoController extends Controller
     return view('cargarProducto', compact('categorias'));
   }
 
-  public function showProduct(){
-    return view('producto');
+  public function showProduct($id){
+    $producto = Producto::find($id);
+    
+    return view('producto', compact('producto'));
   }
 
   public function saveProduct(){
