@@ -82,7 +82,8 @@
       </div>
 
       <div class="cont-head-b">
-        <form class="form-busq" action="index.html" method="get">
+        <form class="form-busq" action="/search" method="get">
+          @csrf
           <div class="h-categorias">
             <div class="cate-text">
               Categorías
@@ -92,7 +93,7 @@
             </div>
           </div>
           <div class="busq-input">
-            <input type="text" name="search" value="" class="search" autocomplete="off">
+            <input type="text" name="search" id ="search" class="search" autocomplete="off" placeholder="Buscar en Sigma">
           </div>
           <div class="busq-icon">
             <ion-icon name="ios-search" role="img" aria-label="search"></ion-icon>
