@@ -157,6 +157,7 @@
         <p> <> with ♥ in Digital House</p>
         <br>
         <p>Sigma 2019, todos los derechos reservados.</p>
+        <p><a href="/preguntas">Ayuda - Preguntas frecuentes - Contacto</a></p>
       </div>
     </footer>
     @yield ('scripts')
