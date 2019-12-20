@@ -23,6 +23,14 @@ Route::get('/producto/{id}', 'ProductoController@showProduct');
 //Vista lista
 Route::get('/lista', 'ListaController@show');
 
+//Editor de Productos (Vista)
+Route::get('/editar/{id}', 'ProductoController@showEditProduct')->middleware('admin');
+
+//Guardado de productos (Back)
+Route::post('/editarProducto', 'ProductoController@editProduct')->middleware('admin');
+
+//Eliminando productos (Back)
+route::post("/borrarProducto","productoController@downProduct")->middleware("admin");;
 //Vista Buscador
 Route::get('/search', 'ListaController@search');
 

@@ -103,8 +103,18 @@ Lista
           <label for="">{{$producto->categoria->nombre}}</label>
           </a>
         </div>
-        <div class="fav-p">
-          <a href="/">
+        <div class="opt-p">
+        @if (Auth::user() && Auth::user()->is_admin == 1)
+          <form class="" action="/borrarProducto" method="post">
+            @csrf
+              <input type="hidden" name="id" value="{{$producto->id}}">
+              <button class="baja"type="submit" name="button">Eliminar</button>
+          </form>
+          <a href="/editar/{{$producto->id}}">
+          <div class="editar">
+            Editar
+          </div></a>
+        @endif
           <ion-icon name="heart-empty"></ion-icon>
           </a>
         </div>
