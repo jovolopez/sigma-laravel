@@ -51,6 +51,9 @@ main{
   background: white;
   border-radius: 3px;
 }
+.productos button{
+  margin: 5px 0;
+}
 .producto img {
   width: 120px;
   margin-right: 5px;
