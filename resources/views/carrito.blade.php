@@ -15,7 +15,7 @@ Lista
       @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
         <article class="producto">
           <div class="imagen-p">
-            <a href="/producto/{{($producto->producto()->get()->first()->id)}}"><img src="/img/macbook.jpg" alt="Macbook"></a>
+            <a href="/producto/{{($producto->producto()->get()->first()->id)}}"><img src="/storage/productos/{{($producto->producto()->get()->first()->foto)}}" alt="Macbook"></a>
           </div>
           <div class="info-p">
             <a href="/producto/{{($producto->producto()->get()->first()->id)}}"><p class="titulo-p">{{($producto->producto()->get()->first()->titulo)}}</p>
