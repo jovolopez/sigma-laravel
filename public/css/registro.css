@@ -24,7 +24,8 @@ main {
 meter {
   margin: 0 auto 1em;
   width: 100%;
-  height: 0.3em;
+  height: 0.5em;
+  border: none;
 
   /* Applicable only to Firefox */
   background: none;
@@ -32,8 +33,8 @@ meter {
 }
 
 meter[value="1"]::-webkit-meter-optimum-value { background: #fa2a2a; }
-meter[value="2"]::-webkit-meter-optimum-value { background: #f2cb2e; }
-meter[value="3"]::-webkit-meter-optimum-value { background: #f2832e; }
+meter[value="2"]::-webkit-meter-optimum-value { background: #ff8b26; }
+meter[value="3"]::-webkit-meter-optimum-value { background: #ffdc52; }
 meter[value="4"]::-webkit-meter-optimum-value { background: #4aed4f; }
 .regis-form {
   font-size: 16px;
