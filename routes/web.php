@@ -18,7 +18,7 @@ Route::get('/cargarProducto', 'ProductoController@showForm')->middleware('admin'
 Route::post('/productsaction', 'ProductoController@saveProduct')->middleware('admin');
 
 //Vista producto
-Route::get('/producto', 'ProductoController@showProduct');
+Route::get('/producto/{id}', 'ProductoController@showProduct');
 
 //Vista lista
 Route::get('/lista', 'ListaController@show');
@@ -31,3 +31,17 @@ Route::post('/editarProducto', 'ProductoController@editProduct')->middleware('ad
 
 //Eliminando productos (Back)
 route::post("/borrarProducto","productoController@downProduct")->middleware("admin");;
+//Vista Buscador
+Route::get('/search', 'ListaController@search');
+
+//Vista lista filtrada
+Route::get('lista/{id}', 'ListaController@show');
+
+//Vista preguntas
+Route::get('/preguntas', 'PreguntasController@show');
+
+//vista Contacto
+Route::get('/contacto', 'ContactoController@show');
+
+//Vista Buscador
+Route::get('/search', 'ListaController@search');
