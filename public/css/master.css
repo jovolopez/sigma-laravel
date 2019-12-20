@@ -209,7 +209,7 @@ footer {
     align-items: center;
   }
 
-  .izq {
+  .izq,.help {
     width: 100%;
     text-align: center;
   }
@@ -244,6 +244,13 @@ footer {
     display: none;
   }
 
+}
+
+.help{
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: fit-content;
 }
 
 @media (max-width:1023px) {

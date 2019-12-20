@@ -137,6 +137,10 @@
           <div class="acercaDe">
             <h3>Sobre Nosotros</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <br>
+            <div class="help">
+              <h4><a href="/preguntas">Ayuda - Preguntas frecuentes - Contacto </a></h4>
+            </div>
           </div>
         </div>
 
@@ -157,7 +161,6 @@
         <p> <> with ♥ in Digital House</p>
         <br>
         <p>Sigma 2019, todos los derechos reservados.</p>
-        <p><a href="/preguntas">Ayuda - Preguntas frecuentes - Contacto</a></p>
       </div>
     </footer>
     @yield ('scripts')
