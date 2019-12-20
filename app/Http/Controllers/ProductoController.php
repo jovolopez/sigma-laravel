@@ -162,4 +162,11 @@ class ProductoController extends Controller
       $vac = [$carritos, $total];
       return view("/carrito", compact('vac'));
     }
+
+    public function removeToCart(Request $request)
+    {
+      if (Auth::user()){
+        Carrito::where('usuario_id', Auth::user()->id)->where('producto_id', $request->id)->delete();return redirect('/carrito')->with('status', 'Producto eliminado')->with('operation', 'success');
+      }
+    }
 }
