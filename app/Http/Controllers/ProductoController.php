@@ -17,7 +17,7 @@ class ProductoController extends Controller
 
   public function showProduct($id){
     $producto = Producto::find($id);
-    
+
     return view('producto', compact('producto'));
   }
 
@@ -103,7 +103,7 @@ class ProductoController extends Controller
 
     $producto->titulo = $request->titulo;
     $producto->precio = $request->precio;
-    $producto->descripcion = $request->descripcion;
+    $producto->descripcion = $request->inputDetalle;
     $producto->categoria_id = $request->categoria_id;
     $producto->stock = $request->stock;
 
