@@ -22,7 +22,7 @@ Lista
         @if (isset($vac[2]) && $categoria->id == $vac[2])
           <a href="/lista">
           <div class="fil-delete">
-            {{$vac[0][0]->categoria->nombre}} ✗</a>
+            {{$categoria->nombre}} ✗</a>
           </div>
           </a>
         @else
@@ -85,7 +85,9 @@ Lista
     </div>
   </div>
   <section class="productos">
-
+    @if (!$vac[0])
+      <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
+    @else
     @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
       <article class="producto">
         <div class="imagen-p">
@@ -103,8 +105,18 @@ Lista
           <label for="">{{$producto->categoria->nombre}}</label>
           </a>
         </div>
-        <div class="fav-p">
-          <a href="/">
+        <div class="opt-p">
+        @if (Auth::user() && Auth::user()->is_admin == 1)
+          <form class="" action="/borrarProducto" method="post">
+            @csrf
+              <input type="hidden" name="id" value="{{$producto->id}}">
+              <button class="baja"type="submit" name="button">Eliminar</button>
+          </form>
+          <a href="/editar/{{$producto->id}}">
+          <div class="editar">
+            Editar
+          </div></a>
+        @endif
           <ion-icon name="heart-empty"></ion-icon>
           </a>
         </div>
@@ -114,7 +126,7 @@ Lista
     @empty
       <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
     @endforelse
-
+    @endif
   </section>
 </div>
 @endsection

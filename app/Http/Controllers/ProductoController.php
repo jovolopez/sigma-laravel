@@ -17,7 +17,7 @@ class ProductoController extends Controller
 
   public function showProduct($id){
     $producto = Producto::find($id);
-    
+
     return view('producto', compact('producto'));
   }
 
@@ -77,5 +77,44 @@ class ProductoController extends Controller
     $producto->save();
 
     return redirect('/');
+  }
+
+  public function showEditProduct($id = 1)
+  {
+    if (!is_numeric($id)) {
+      return redirect('/');
+    }
+    $producto = Producto::find($id);
+    $categorias = Categoria::all();
+    $vac = [$producto, $categorias];
+
+    return view('editarProducto', compact('vac'));
+  }
+
+  public function editProduct(Request $request)
+  {
+    $producto = Producto::find($request->id);
+
+    if ($request->file('foto')) {
+        $imagen = $request->file('foto')->store('public/img');
+        $imagen = basename($imagen);
+        $producto->foto = $imagen;
+    }
+
+    $producto->titulo = $request->titulo;
+    $producto->precio = $request->precio;
+    $producto->descripcion = $request->inputDetalle;
+    $producto->categoria_id = $request->categoria_id;
+    $producto->stock = $request->stock;
+
+    $producto->save();
+
+    return redirect('/')->with('status', 'Producto modificado')->with('operation', 'success');
+  }
+
+  public function downProduct(Request $request)
+  {
+    Producto::find($request->id)->delete();
+    return redirect('/lista')->with('status', 'Producto eliminado')->with('operation', 'success');
   }
 }
