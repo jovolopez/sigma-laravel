@@ -1,0 +1,24 @@
+USE sigma;
+insert into categorias(id, nombre) values(default, "Camisas");
+insert into categorias(id, nombre) values(default, "Pantalones");
+insert into categorias(id, nombre) values(default, "Abrigos");
+insert into categorias(id, nombre) values(default, "Calzado");
+insert into categorias(id, nombre) values(default, "Accesorios");
+
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('1', 'Brazalete del infinito', '2000', 'Hecho en oro 22k con diversas gemas preciosas', '5', '5');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('2', 'Pulsera cosmica', '2000', 'Hecha en oro 22k con incrustaciones de gemas preciosas', '5', '5');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('3', 'Reloj Mark1', '2500', 'Hecho en acero inoxidable, con detalles en oro. Diseño clasico', '5', '10');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('4', 'Reloj ArcReactor', '3000', 'Hecho en acero inoxidable, tiene su propia fuente de energia', '5', '1');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('5', 'Gafas de sol Edith', '1500', 'Hechas en acero inoxidable y cristales de fibra de vidrio', '5', '15');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('6', 'Zapatillas Adidas x Marvel V1', '4000', 'Hechas con los mejores materiales, los mas livianos y resistentes', '4', '4');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('7', 'Zapatillas Adidas x Marvel V2', '4000', 'Hechas con los mejores materiales, los mas livianos y resistentes', '4', '4');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('8', 'Remera Stark', '1200', 'Talles: S,  M. Color: Gris oscuro.  ', '1', '20');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('9', 'Remera deportiva HunderCap', '1200', 'Talles: S,  M. Color: Gris.', '1', '20');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('10', 'Jeans Thunder', '2000', 'Talles: 38 - 46.', '2', '10');
+INSERT INTO `sigma`.`productos` (`id`, `titulo`, `precio`, `descripcion`, `categoria_id`, `stock`) VALUES ('11', 'Jeans Luky', '2000', 'Talles: 38 - 46.', '2', '10');
+
+1 camisas
+2 pantalones
+3 abrigos
+4 calzado
+5 accesorios
