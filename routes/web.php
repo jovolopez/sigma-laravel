@@ -9,7 +9,7 @@ Auth::routes();
 Route::get('/perfil', 'PerfilController@show');
 
 //Carrito
-Route::get('/carrito', 'CarritoController@show');
+Route::get('/carrito', 'ProductoController@addToCart');
 
 //Carga de Productos (Vista de Formulario)
 Route::get('/cargarProducto', 'ProductoController@showForm')->middleware('admin');
@@ -45,3 +45,6 @@ Route::get('/contacto', 'ContactoController@show');
 
 //Vista Buscador
 Route::get('/search', 'ListaController@search');
+
+//Agregar Producto al carrito
+Route::post("/agregarAlCarrito","ProductoController@addToCart");
