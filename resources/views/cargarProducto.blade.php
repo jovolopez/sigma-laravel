@@ -127,6 +127,6 @@ Cargar Producto
 
   </div>
 
-
+<script type="text/javascript" src="/js/cargaProducto.js" ></script>
 
 @endsection
