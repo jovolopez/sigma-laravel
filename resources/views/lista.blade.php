@@ -35,18 +35,6 @@ Lista
       @endforelse
     </ul>
   </form>
-  <form class="fil-sec-opt" action="list.php" method="get">
-    <div class="fil-sec-titu">Talle</div>
-    <ul>
-      <li><input type="radio" name="talle" value="remeras"> 34</li>
-      <li><input type="radio" name="talle" value="pantal"> 36</li>
-      <li><input type="radio" name="talle" value="calzado"> 38</li>
-      <li><input type="radio" name="talle" value="buzos"> 40</li>
-      <li><input type="radio" name="talle" value="camper"> 42</li>
-      <li><input type="radio" name="talle" value="ropaint"> 44</li>
-      <li><input type="radio" name="talle" value="acceso"> 46</li>
-    </ul>
-  </form>
 </div>
 <div class="cont-b">
   <div class="opciones">
