@@ -95,7 +95,7 @@ main{
 .opt-p ion-icon{
   color: red;
 }
-.baja{
+#delete{
   width: 80px;
   text-align: center;
   padding: 3px;
@@ -110,20 +110,25 @@ main{
   height: 28px;
   outline: none;
 }
-.baja:hover{
+#delete:hover{
   background: #ffd7d7;
 }
 .editar{
   width: 80px;
+  height: 30px;
   text-align: center;
   padding: 3px;
   border-radius: 3px;
-  background: #b8bcff;
-  color: #13006f;
+  background: #28bf28;
+  color: #003c06;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 }
 .editar:hover{
-  background: #dbddff;
+  background: #7eff7f;
 }
 body{
   font-family: 'Open Sans';
@@ -157,6 +162,9 @@ body{
 .opt-text{
   padding-right: 10px;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 label{
   color: gray;
