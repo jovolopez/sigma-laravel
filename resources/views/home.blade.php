@@ -28,9 +28,13 @@ Home
 @forelse ($productos as $producto)
   <article class="producto">
       <a href="/producto/{{$producto->id}}">
-        <img style="width: 100%; height: 300px;" src="/storage/productos/{{$producto->foto}}" alt="Macbook">
+        <div class="imagen-p">
+          <a href="/producto/{{$producto->id}}">
+            <img src="@if ($producto->foto)/storage/productos/{{$producto->foto}}@else/img/camara.png @endif" alt="{{$producto->titulo}}" alt="Macbook">
+          </a>
+        </div>
         <p>{{$producto->titulo}}</p>
-        <p><b>{{$producto->precio}}$ ARS - {{$producto->stock}} disponibles</b></p>
+      <p><b>{{$producto->precio}}$ ARS - {{$producto->stock}} disponibles</b></p>
       </a>
     </article>
 @empty

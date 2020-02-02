@@ -68,9 +68,17 @@ body {
   border-radius: 10px;
 }
 
+.imagen-p{
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
 .producto img {
-  width: 100%;
-  max-width: 200px;
+  height: 175px;
+  margin-right: 5px;
+  border-radius: 5px;
 }
 
 @media (min-width: 768px) {

@@ -55,7 +55,7 @@ main{
   margin: 5px 0;
 }
 .producto img {
-  width: 120px;
+  height: 125px;
   margin-right: 5px;
   border-radius: 5px;
 }
@@ -67,8 +67,11 @@ main{
   border-bottom: solid 1px #ececec;
 }
 .imagen-p{
-  display: inline-block;
-  padding: 0 10px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+  overflow: hidden;
 }
 .info-p{
   width: 100%;

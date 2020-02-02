@@ -34,7 +34,7 @@ class ProductoController extends Controller
 
         //Comprimir la imagen para que no ocupe tanto espacio.
         $filepath = public_path('\\storage\\productos\\'.$ruta);
-
+        //$filepath = storage_path('\\app\\public\\productos\\'.$ruta); Podría ser también
         try {
             \Tinify\setKey("7rl2g2dfnNXgN51jJCgwGmXtRfqdhKwP");
             $source = \Tinify\fromFile($filepath);
