@@ -20,7 +20,7 @@
         </div>
         <div class="h-logo">
           <a href="/">
-            <h1>Sigma</h1>
+            <img src="/img/logo.png" alt="">
           </a>
         </div>
         <div class="h-busq-sm">

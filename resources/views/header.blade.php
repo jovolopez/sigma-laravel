@@ -68,19 +68,15 @@
 
     <div class="menu-mobile">
         <ul>
-            <li><div class="logo">
-                <img src="/img/logo.png" alt="">
-            </div></li>
+            <li class="logo-menu">
+                <img src="/img/logo.png" alt=""></li>
             <li>@guest
                 <a href="/login">
-                <div class="user">
-                    <p>¡Inicia sesión!</p>
-                    <ion-icon name="log-in-outline"></ion-icon>
-                </div>
+                    ¡Inicia sesión!<ion-icon name="log-in-outline"></ion-icon>
                 </a>
                 @else
                 <a href="/perfil">
-                    <p>{{ ucfirst(Auth::user()->first_name) }}</p>
+                    {{ ucfirst(Auth::user()->first_name) }}
                     @if (Auth::user()->avatar != '')
                     <img class="user-foto" src="/storage/avatars/{{Auth::user()->avatar}}" alt="">
                     @else
@@ -88,9 +84,9 @@
                     @endif
                 </a>
                 @endguest</li>
-            <li>Carrito</li>
-            <li>Categorías</li>
-            <li></li>
+            <li>Carrito <ion-icon name="cart-outline"></ion-icon></li>
+            <li>Categorías <ion-icon name="apps-outline"></ion-icon></li>
+            <li>Contact & help</li>
         </ul>
     </div>
 
