@@ -25,7 +25,7 @@ class listaController extends Controller
      $productos = Producto::where('categoria_id', $filter)->get();
     }
 
-    $vac = [$productos, $categorias, $filter];
+    $vac = ['productos' => $productos, 'categorias' => $categorias, 'filter' => $filter];
     return view('lista', compact('vac'));
   }
 
@@ -35,7 +35,7 @@ class listaController extends Controller
     $productos = Producto::where('titulo', 'LIKE', $search)->get();
     $categorias = Categoria::all();
 
-    $vac = [$productos, $categorias];
+    $vac = ['productos' => $productos, 'categorias' => $categorias];
 
     return view('lista', compact('vac'));
   }

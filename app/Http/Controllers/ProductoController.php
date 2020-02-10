@@ -15,13 +15,17 @@ class ProductoController extends Controller
   public function showForm()
   {
     $categorias = Categoria::all();
-    return view('cargarProducto', compact('categorias'));
+    $vac = ['categorias' => $categorias];
+
+    return view('cargarProducto', compact('vac'));
   }
 
   public function showProduct($id){
     $producto = Producto::find($id);
+    $categorias = Categoria::all();
+    $vac = ['producto' => $producto, 'categorias' => $categorias];
 
-    return view('producto', compact('producto'));
+    return view('producto', compact('vac'));
   }
 
   public function saveProduct(Request $req){
@@ -29,32 +33,32 @@ class ProductoController extends Controller
     $ruta = '';
     if ($req->file('imagen') != NULL) {
         //muevo el archivo
-        $ruta = request('imagen')->store('public\\productos');
+        $ruta = request('imagen')->store('public/productos');
         $ruta = basename($ruta);
 
         //Comprimir la imagen para que no ocupe tanto espacio.
-        $filepath = public_path('\\storage\\productos\\'.$ruta);
+        $filepath = public_path('/storage/productos/'.$ruta);
         //$filepath = storage_path('\\app\\public\\productos\\'.$ruta); Podría ser también
-        try {
-            \Tinify\setKey("7rl2g2dfnNXgN51jJCgwGmXtRfqdhKwP");
-            $source = \Tinify\fromFile($filepath);
-            $source->toFile($filepath);
-        } catch(\Tinify\AccountException $e) {
-            // Verify your API key and account limit.
-            return redirect('images/create')->with('error', $e->getMessage());
-        } catch(\Tinify\ClientException $e) {
-            // Check your source image and request options.
-            return redirect('images/create')->with('error', $e->getMessage());
-        } catch(\Tinify\ServerException $e) {
-            // Temporary issue with the Tinify API.
-            return redirect('images/create')->with('error', $e->getMessage());
-        } catch(\Tinify\ConnectionException $e) {
-            // A network connection error occurred.
-            return redirect('images/create')->with('error', $e->getMessage());
-        } catch(Exception $e) {
-            // Something else went wrong, unrelated to the Tinify API.
-            return redirect('images/create')->with('error', $e->getMessage());
-        }
+        // try {
+        //     \Tinify\setKey("7rl2g2dfnNXgN51jJCgwGmXtRfqdhKwP");
+        //     $source = \Tinify\fromFile($filepath);
+        //     $source->toFile($filepath);
+        // } catch(\Tinify\AccountException $e) {
+        //     // Verify your API key and account limit.
+        //     return redirect('images/create')->with('error', $e->getMessage());
+        // } catch(\Tinify\ClientException $e) {
+        //     // Check your source image and request options.
+        //     return redirect('images/create')->with('error', $e->getMessage());
+        // } catch(\Tinify\ServerException $e) {
+        //     // Temporary issue with the Tinify API.
+        //     return redirect('images/create')->with('error', $e->getMessage());
+        // } catch(\Tinify\ConnectionException $e) {
+        //     // A network connection error occurred.
+        //     return redirect('images/create')->with('error', $e->getMessage());
+        // } catch(Exception $e) {
+        //     // Something else went wrong, unrelated to the Tinify API.
+        //     return redirect('images/create')->with('error', $e->getMessage());
+        // }
     }
 
     $reglas = [
@@ -89,7 +93,7 @@ class ProductoController extends Controller
     }
     $producto = Producto::find($id);
     $categorias = Categoria::all();
-    $vac = [$producto, $categorias];
+    $vac = ['producto' => $producto, 'categorias' => $categorias];
 
     return view('editarProducto', compact('vac'));
   }
@@ -142,10 +146,11 @@ class ProductoController extends Controller
             }
             $carritos = Carrito::where('usuario_id', Auth::user()->id)->get();
             $total = 0;
+            $categorias = Categoria::All();
             foreach ($carritos as $producto) {
               $total = $total + $producto->producto()->get()->first()->precio;
             }
-            $vac = [$carritos, $total];
+            $vac = ['carritos' => $carritos, 'total' => $total, 'categorias' => $categorias];
             return view("/carrito", compact('vac'));
         }
         else {
@@ -156,10 +161,11 @@ class ProductoController extends Controller
     {
       $carritos = Carrito::where('usuario_id', Auth::user()->id)->get();
       $total = 0;
+      $categorias = Categoria::All();
       foreach ($carritos as $producto) {
         $total = $total + $producto->producto()->get()->first()->precio;
       }
-      $vac = [$carritos, $total];
+      $vac = ['carritos' => $carritos, 'total' => $total, 'categorias' => $categorias];
       return view("/carrito", compact('vac'));
     }
 

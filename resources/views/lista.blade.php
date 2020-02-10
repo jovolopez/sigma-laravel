@@ -18,8 +18,8 @@ Lista
   <form class="fil-sec-opt" action="list.php" method="get">
     <div class="fil-sec-titu">Tipo</div>
     <ul>
-      @forelse ($vac[1] as $categoria)
-        @if (isset($vac[2]) && $categoria->id == $vac[2])
+      @forelse ($vac['categorias'] as $categoria)
+        @if (isset($vac['filter']) && $categoria->id == $vac['filter'])
           <a href="/lista">
           <div class="fil-delete">
             {{$categoria->nombre}} ✗</a>
@@ -73,10 +73,10 @@ Lista
     </div>
   </div>
   <section class="productos">
-    @if (!$vac[0])
+    @if (!$vac['productos'])
       <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
     @else
-    @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
+    @forelse ($vac['productos'] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
       <article class="producto">
         <div class="imagen-p">
           <a href="/producto/{{$producto->id}}">

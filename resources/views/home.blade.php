@@ -6,39 +6,47 @@
 Home
 @endsection
 @section('main')
-<div class="banner">
-  <div class="banner-text">
-    <h2><b>Oferta!</b></h2>
-    <p>Haz click para saber más.</p>
-  </div>
-  <div class="banner-img">
-    <img src="/img/iphone.png" alt="iPhone 11 de Oferta">
-  </div>
-</div>
 
-<div class="ordenar">
-  <a href="lista">
-    <ion-icon name="list-box"></ion-icon>
-    <p>Ver en lista</p>
+<img class="banner" src="/img/banner.jpg" alt="">
+
+<div class="ofertas">
+
+@forelse ($vac['productos'] as $producto)
+  <a class="producto" href="/producto/{{$producto->id}}">
+    <div class="imagen">
+      <img src="@if ($producto->foto)/storage/productos/{{$producto->foto}}@else/img/camara.png @endif" alt="{{$producto->titulo}}">
+    </div>
+    <div class="texto">
+      <div class="titulo">
+      {{$producto->titulo}}
+      </div>
+      <div class="precio">
+        $ {{$producto->precio}}.00
+      </div>
+    </div>
   </a>
-</div>
-
-<section class="productos">
-
-@forelse ($productos as $producto)
-  <article class="producto">
-      <a href="/producto/{{$producto->id}}">
-        <div class="imagen-p">
-          <a href="/producto/{{$producto->id}}">
-            <img src="@if ($producto->foto)/storage/productos/{{$producto->foto}}@else/img/camara.png @endif" alt="{{$producto->titulo}}" alt="Macbook">
-          </a>
-        </div>
-        <p>{{$producto->titulo}}</p>
-      <p><b>{{$producto->precio}}$ ARS - {{$producto->stock}} disponibles</b></p>
-      </a>
-    </article>
 @empty
-  <h3>No hay productos actualmente disponibles, disculpe las molestias</h3>
+No hay productos actualmente disponibles, disculpe las molestias
 @endforelse
-</section>
+
+@forelse ($vac['productos'] as $producto)
+  <a class="producto" href="/producto/{{$producto->id}}">
+    <div class="imagen">
+      <img src="@if ($producto->foto)/storage/productos/{{$producto->foto}}@else/img/camara.png @endif" alt="{{$producto->titulo}}">
+    </div>
+    <div class="texto">
+      <div class="titulo">
+      {{$producto->titulo}}
+      </div>
+      <div class="precio">
+        $ {{$producto->precio}}
+      </div>
+    </div>
+  </a>
+@empty
+No hay productos actualmente disponibles, disculpe las molestias
+@endforelse
+
+
+</div>
 @endsection

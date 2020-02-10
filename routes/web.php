@@ -56,5 +56,7 @@ Route::get("/carrito", "ProductoController@showCart");
 //Sacar Producto de carrito
 Route::post("/sacarDelCarrito","ProductoController@removeToCart");
 
-//Vista Header
-Route::get("/header", function(){return view("header");});
+//Vista Master2 (actual master)
+Route::get("/master", function(){return view("/layouts/master");});
+
+Route::get("/masterold", function(){return view("/layouts/master1");});

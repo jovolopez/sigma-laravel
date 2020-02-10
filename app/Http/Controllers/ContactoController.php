@@ -9,7 +9,10 @@ class ContactoController extends Controller
 
   public function show()
   {
-      return view('contacto');
+    $categorias = Categoria::All();
+    $vac = ['categorias' => $categorias];
+
+    return view('contacto', compact('vac'));
   }
 
 }

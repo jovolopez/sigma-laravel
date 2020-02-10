@@ -18,7 +18,9 @@ class CarritoController extends Controller
 
   public function show()
   {
+    $categorias = Categoria::All();
+    $vac = ['categorias' => $categorias];
 
-      return view('carrito');
+    return view('carrito', compact('vac'));
   }
 }

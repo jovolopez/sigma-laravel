@@ -9,23 +9,23 @@ Producto
 @section('main')
 <div class="container">
   <div class="producto">
-    @if ($producto != null)
+    @if ($vac['producto'] != null)
       <div class="imagen">
-        <img style="max-width: 300px;" src="/storage/productos/{{$producto->foto}}" alt="">
+        <img style="max-width: 300px;" src="/storage/productos/{{$vac['producto']->foto}}" alt="">
       </div>
       <div class="descripcion">
-        <a href="/lista/{{$producto->categoria->id}}"><p>{{$producto->categoria->nombre}} /</p></a>
-        <h2>{{$producto->titulo}}</h2>
+        <a href="/lista/{{$vac['producto']->categoria->id}}"><p>{{$vac['producto']->categoria->nombre}} /</p></a>
+        <h2>{{$vac['producto']->titulo}}</h2>
         <ul>
-          <li><b>{{$producto->precio}} $ ARS - {{$producto->stock}} Disponibles</b></li>
+          <li><b>{{$vac['producto']->precio}} $ ARS - {{$vac['producto']->stock}} Disponibles</b></li>
           <li>Caracteristicas:</li>
         </ul>
-        <p>{{$producto->descripcion}}</p>
+        <p>{{$vac['producto']->descripcion}}</p>
       </div>
       <div class="acciones">
         <form class="" action="/agregarAlCarrito" method="post">
           @csrf
-          <input type="hidden" name="id" value="{{$producto->id}}">
+          <input type="hidden" name="id" value="{{$vac['producto']->id}}">
           <input id="comprar" type="submit" name="" value="Comprar">
           <input id="agregar" type="submit" name="" value="Agregar al carrito">
         </form>
@@ -43,9 +43,9 @@ Producto
 
     <div class="rel-productos">
       <section>
-        @if ($producto != null)
-          @forelse ($producto->categoria->productos as $prod)
-            @if ($prod->id != $producto->id)
+        @if ($vac['producto'] != null)
+          @forelse ($vac['producto']->categoria->productos as $prod)
+            @if ($prod->id != $vac['producto']->id)
               <article class="rel-producto">
                 <a href="/producto/{{$prod->id}}">
                 <h3>{{$prod->titulo}}</h3>

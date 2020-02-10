@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categoria;
 
 class PerfilController extends Controller
 {
@@ -14,7 +15,9 @@ class PerfilController extends Controller
 
   public function show()
   {
-      return view('perfil');
+    $categorias = Categoria::all();
+    $vac = ['categorias' => $categorias];
+     return view('perfil', compact('vac'));
   }
   
 }

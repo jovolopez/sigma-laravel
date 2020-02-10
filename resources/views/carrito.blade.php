@@ -9,10 +9,10 @@ Lista
 
   <div class="cont-b">
     <section class="productos">
-      @if (!$vac[0])
+      @if (!$vac['carritos'])
         <p style="text-align: center;">No hay productos que coincidan con la busqueda. Lo sentimos</p>
       @else
-      @forelse ($vac[0] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
+      @forelse ($vac['carritos'] as $producto) {{--$vac tiene los productos(0) y las categorias(1)--}}
         <article class="producto">
           <div class="imagen-p">
             <a href="/producto/{{($producto->producto()->get()->first()->id)}}"><img src="/storage/productos/{{($producto->producto()->get()->first()->foto)}}" alt="Macbook"></a>
@@ -50,7 +50,7 @@ Lista
         <br>
         <br>
         <br>
-        <h2>Valor Total: <b style="color: green;">{{$vac[1]}}$ ARS</b></h2>
+        <h2>Valor Total: <b style="color: green;">{{$vac['total']}}$ ARS</b></h2>
         <br>
         <br><a href="#">
           <div class="editar">

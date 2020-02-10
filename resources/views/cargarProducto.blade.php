@@ -87,7 +87,7 @@ Cargar Producto
         <div class="col-sm-10">
           <select id="inputCategoria" name="categoria_id" class="form-control">
             <option value="0">Seleccione una categoría</option>
-            @foreach ($categorias as $categoria)
+            @foreach ($vac['categorias'] as $categoria)
               <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
             @endforeach
           </select>

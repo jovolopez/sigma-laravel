@@ -73,7 +73,9 @@ class RegisterController extends Controller
             $ruta = basename($ruta);
 
             //Comprimir la imagen para que no ocupe tanto espacio.
-            $filepath = public_path('\\storage\\avatars\\'.$ruta);
+            //Para linux la siguiente ruta es: '/storage/avatars/'
+            //Para windows es: '\\storage\\avatars\\'.$ruta
+            $filepath = public_path('/storage/avatars/'.$ruta);
 
             try {
                 \Tinify\setKey("7rl2g2dfnNXgN51jJCgwGmXtRfqdhKwP");
