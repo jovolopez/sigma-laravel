@@ -30,12 +30,17 @@ main {
   padding: 5px;
 }
 
-.producto {
-  width: 24.1%;
-  height: 300px;
+.producto-box{
+  display: flex;
+  width: 25%;
+  padding: 5px;
   box-sizing: border-box;
+}
+
+.producto {
+  width: 100%;
+  height: 300px;
   overflow: hidden;
-  margin: 5px;
   background: white;
   border-radius: 3px;
   box-shadow: #e8e7e7 0 0 19px 0px;
@@ -73,4 +78,21 @@ main {
   margin-left: 15px;
   font-size: 17px;
   color: rgb(63, 63, 63);
+}
+
+/* Tablets querys */
+@media (max-width:1024px){
+  .producto-box{
+    width: 33%;
+  }
+}
+/* Mobile querys */
+@media(max-width:550px){
+  .producto-box{
+    width: 50%;
+    padding: 2px;
+  }
+  .producto{
+    box-shadow: #e8e7e7 0 0 7px 0px;
+  }
 }

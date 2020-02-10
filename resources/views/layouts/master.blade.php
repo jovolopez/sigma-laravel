@@ -121,7 +121,8 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore ratione, pariatur atque quis, incidunt repudiandae consectetur adipisicing elit. Labore ratione, pariatur atque quis, incidunt repudiandae.</p>
             </div>
         </div>
-        
+
+        @if (isset($vac))
         <div class="center">
             <h2>Categorías</h2>
             <ul>
@@ -132,6 +133,7 @@
             @endforelse
             </ul>
         </div>
+        @endif
 
         <div class="right">
             <a href="/preguntas">

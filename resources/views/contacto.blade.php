@@ -25,9 +25,9 @@ Contacto
             <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off"/>
             <input type="hidden" name="_redirect" value="http://localhost:8000/"/>
           </div>
-
-      <textarea name="mensaje" placeholder="Mensaje"></textarea>
-
+          <div class="campo mensaje">
+            <textarea name="mensaje" placeholder="Mensaje"></textarea>
+          </div>
           <div class="Boton">
               <input type="submit" id="boton" value="Enviar">
           </div>

@@ -274,6 +274,7 @@ footer .right h3{
     }
     footer{
         flex-flow: wrap;
+        justify-content: space-around;    
     }
 }
 /* Mobile header */

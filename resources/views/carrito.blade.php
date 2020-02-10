@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="/css/carrito.css">
 @endsection
 @section('title')
-Lista
+Carrito
 @endsection
 @section('main')
 

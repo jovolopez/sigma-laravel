@@ -51,7 +51,7 @@ Route::get('/search', 'ListaController@search');
 Route::post("/agregarAlCarrito","ProductoController@addToCart");
 
 //Vista Carrito
-Route::get("/carrito", "ProductoController@showCart");
+Route::get("/carrito", "ProductoController@showCart")->middleware('auth');
 
 //Sacar Producto de carrito
 Route::post("/sacarDelCarrito","ProductoController@removeToCart");
