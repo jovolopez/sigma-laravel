@@ -6,20 +6,19 @@
 Contacto
 @endsection
 @section('main')
-  <main class="container">
     <form class="contact-form" action="https://submit-form.com/5xdSTu1RXQY1UYbiTm69O" target="_self">
 
       <h2>Contacto</h2>
 
         <hr size="1px" color="#ddd">
 
-          <div class="Nombre">
+          <div class="Nombre campo">
             <input type="text" name="Nombre" placeholder="Nombre">
           </div>
-          <div class="Telefono">
+          <div class="Telefono campo">
               <input type="tel" name="Telefono" placeholder="Telefono">
           </div>
-          <div class="E-mail">
+          <div class="E-mail campo">
               <input type="text" name="email" placeholder="Email">
           </div>
           <div class="honeypot">
@@ -33,5 +32,4 @@ Contacto
               <input type="submit" id="boton" value="Enviar">
           </div>
     </form>
-  </main>
 @endsection

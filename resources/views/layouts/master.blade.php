@@ -111,7 +111,18 @@
     </main>
 
     <footer>
-        <div class="left">
+    <div class="left">
+            <div class="imagen">
+                <img src="/img/logo.png" alt="">
+                <p>Todos los derechos reservados</p>
+            </div>
+            <div class="nosotros">
+                <h2>Sobre nosotros</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore ratione, pariatur atque quis, incidunt repudiandae consectetur adipisicing elit. Labore ratione, pariatur atque quis, incidunt repudiandae.</p>
+            </div>
+        </div>
+        
+        <div class="center">
             <h2>Categorías</h2>
             <ul>
             @forelse ($vac['categorias'] as $categoria)
@@ -121,21 +132,17 @@
             @endforelse
             </ul>
         </div>
-        <div class="center">
-            <img src="/img/logo.png" alt="">
-            <p>Todos los derechos reservados</p>
-        </div>
+
         <div class="right">
-        <h2>Categorías</h2>
-            <ul>
-            @forelse ($vac['categorias'] as $categoria)
-            <a href=""></a>
-                <li>{{$categoria->nombre}}</li>
-            @empty
-                <li>No hay categorías</li>
-            @endforelse
-            </ul>
+            <a href="/preguntas">
+            <h3>Preguntas frecuentes</h3>
+            </a>
+            <a href="/contacto">
+            <h3>Contacto</h3>
+            </a>
         </div>
+        
+        
     </footer>
     
     @yield ('scripts')

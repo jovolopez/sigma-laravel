@@ -8,6 +8,10 @@ body{
     text-decoration: none;
 }
 
+a{
+    color: inherit;
+}
+
 header{
     position: sticky;
     top: 0;
@@ -211,32 +215,54 @@ footer {
     color: #424242;
 }
 
-footer .left{
+footer .center, footer .left, footer .right{
     margin-top: 3em;
+    max-width: 100%;
 }
-footer .left h2{
+footer .center h2, footer .left h2, footer .right h3{
     font-weight: 400;
     margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: solid 1px rgb(175, 175, 175);
 }
-footer .left ul{
+
+footer .center h2{
+    width: fit-content;
+}
+footer .center ul{
     padding-inline-start: 10px;
 }
 
-footer .left ul li{
+footer .center ul li{
     margin-bottom: 5px;
 }
 
-footer .center{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    color: gray;
-}
-footer .center img{
-    width: 200px;
+footer.center h2{
+    max-width: fit-content;
 }
 
+footer .left{
+    width: 570px;
+    display: flex;
+}
+footer .left .imagen img{
+    width: 200px;
+}
+footer .left .imagen{
+    width: 200px;
+    padding-right: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+footer .left .nosotros p{
+    font-size: 14px;
+}
+
+footer .right h3{
+    padding: 10px;
+    border: solid 1px rgb(175, 175, 175);
+    border-radius: 5px;
+}
 
 /* Tablets header */
 @media (max-width:1024px){
@@ -246,6 +272,9 @@ footer .center img{
     header .hamb{
         display: flex;
     }
+    footer{
+        flex-flow: wrap;
+    }
 }
 /* Mobile header */
 @media(max-width:550px){
@@ -254,5 +283,8 @@ footer .center img{
     }
     .hamb-menu .logo-menu{
         display: block;
+    }
+    footer{
+        flex-flow: wrap column;
     }
 }
