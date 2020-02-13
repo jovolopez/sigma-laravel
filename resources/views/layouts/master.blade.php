@@ -31,6 +31,8 @@
                 <div class="icono">
                     <ion-icon name="search-outline" size="large"></ion-icon>
                 </div>
+                <div class="results">
+                </div>
             </form>
         </div>
         <div class="right">
