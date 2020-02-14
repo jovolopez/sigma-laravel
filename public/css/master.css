@@ -1,5 +1,12 @@
 body{
     font-family: 'Segoe UI', 'Open Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    /* Para cuando la pagina es menor que la altura de la pantalla */
+    /* opacity: 0;
+    transition: 0.2s opacity; */
 }
 
 *{
@@ -52,6 +59,7 @@ header .search-bar {
     overflow: hidden;
     max-width: 90%;
     position: relative;
+    transition: width 200ms ease-in-out;
 }
 
 header .search-boor {
@@ -82,6 +90,8 @@ header .icono {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border-top-right-radius: 5px;
+    /* Porque sin el overflow se sobrepasa */
 }
 
 header .icono ion-icon{
@@ -141,7 +151,7 @@ header .cart, header .user, header .categ{
     height: 26px;
     background: rgb(243, 243, 243); 
     box-shadow: rgba(0,0,0,.05) 0px 2px 0px 0px;
-    transition: 0.3s all;
+    transition: 0.3s border-bottom;
     border-bottom: solid 2px transparent;
     border-top: solid 2px transparent;
     cursor: pointer;
@@ -322,5 +332,8 @@ footer .right h3{
     }
     footer{
         flex-flow: wrap column;
+    }
+    footer .left{
+        flex-flow: column;
     }
 }

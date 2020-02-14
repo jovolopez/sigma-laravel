@@ -12,11 +12,21 @@ hambButton.onclick = function () {
     }
 }
 
-searchIn.onclick = function () {
+searchIn.onfocus = function () {
+    results.className = 'results active';
+    searchBar.style.width = '450px';
     searchBar.style.overflow = 'inherit';
-    if (results.classList == 'results active'){
-        results.className = 'results';
-    } else {
-        results.className = 'results active';
-    }
+    searchBar.style.borderBottomLeftRadius = '0';
+    searchBar.style.borderBottomRightRadius = '0';
 }
+
+searchIn.onblur = function () {
+    results.className = 'results';
+    searchBar.style.width = '350px';
+    searchBar.style.overflow = 'hidden';
+    searchBar.style.borderBottomLeftRadius = '5px';
+    searchBar.style.borderBottomRightRadius = '5px';
+}
+
+ // añadir gif de carga
+ 
