@@ -32,6 +32,7 @@
                     <ion-icon name="search-outline" size="large"></ion-icon>
                 </div>
                 <div class="results">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officia molestiae perspiciatis rerum aperiam libero delectus at. Molestiae distinctio inventore voluptate, voluptatum eaque recusandae! Consequuntur harum minima modi aperiam praesentium!
                 </div>
             </form>
         </div>

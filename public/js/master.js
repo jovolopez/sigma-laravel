@@ -4,6 +4,9 @@ let searchIn = document.querySelector('#search');
 let results = document.querySelector('.results');
 let searchBar = document.querySelector('.search-bar');
 
+let header = document.querySelector('header');
+let body = document.querySelector('body');
+
 hambButton.onclick = function () {
     if (hambMenu.classList == 'hamb-menu active'){
         hambMenu.className = 'hamb-menu';
@@ -14,19 +17,26 @@ hambButton.onclick = function () {
 
 searchIn.onfocus = function () {
     results.className = 'results active';
-    searchBar.style.width = '450px';
-    searchBar.style.overflow = 'inherit';
-    searchBar.style.borderBottomLeftRadius = '0';
-    searchBar.style.borderBottomRightRadius = '0';
+    searchBar.className = 'search-bar active';
 }
 
 searchIn.onblur = function () {
     results.className = 'results';
-    searchBar.style.width = '350px';
-    searchBar.style.overflow = 'hidden';
-    searchBar.style.borderBottomLeftRadius = '5px';
-    searchBar.style.borderBottomRightRadius = '5px';
+    searchBar.className = 'search-bar';
 }
 
  // añadir gif de carga
  
+ window.onkeypress = function (e) {
+     console.log(e);
+     if (e.key == 'w') {
+         body.style.background = '#ffffff';
+         header.style.background = '#ffffff';
+         header.style.borderBottom = '1px solid #e4e4e4'; 
+     } 
+     if (e.key == 'g') {
+        body.style.background = 'rgb(251,251,251)';
+        header.style.background = '#ffffff';
+        header.style.borderBottom = '1px solid #e4e4e4'; 
+     }
+ }

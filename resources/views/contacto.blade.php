@@ -8,7 +8,7 @@ Contacto
 @section('main')
     <form class="contact-form" action="https://submit-form.com/5xdSTu1RXQY1UYbiTm69O" target="_self">
 
-      <h2>Contacto</h2>
+      <h1>Contacto</h1>
 
         <hr size="1px" color="#ddd">
 
