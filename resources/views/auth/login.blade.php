@@ -10,7 +10,7 @@ Iniciar Sesión
   <div class="container">
     <form id="form" class="login-form" action="login" method="post">
       @csrf
-      <h2>Iniciar sesión</h2>
+      <h1>Iniciar sesión</h1>
       <hr size="1px" color="#ddd">
       <div class="campo mail">
         <label for="email">Email</label>
@@ -42,6 +42,8 @@ Iniciar Sesión
       </div>
       <br>
       <a style="font-size: 12px; text-decoration: underline;" href="{{ route('password.request') }}">Olvidé la clave.</a>
+      <br>
+      <a style="font-size: 14px; text-decoration: underline;" href="{{ route('register') }}">¿No tienes cuenta? ¡Registrate aquí!</a>
       <div class="campo remem">
         <input type="checkbox" name="remem" id="remem" value="y">
         <label for="remember">Mantentener sesión iniciada</label>

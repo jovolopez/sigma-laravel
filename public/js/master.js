@@ -23,7 +23,7 @@ searchIn.onfocus = function () {
 searchIn.onblur = function () {
     results.className = 'results';
     searchBar.className = 'search-bar';
-}
+ }
 
  // añadir gif de carga
  
@@ -36,7 +36,7 @@ searchIn.onblur = function () {
      } 
      if (e.key == 'g') {
         body.style.background = 'rgb(251,251,251)';
-        header.style.background = '#ffffff';
+        header.style.background = '#fffffffa';
         header.style.borderBottom = '1px solid #e4e4e4'; 
      }
  }

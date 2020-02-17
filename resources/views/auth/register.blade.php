@@ -10,7 +10,7 @@ Registro
 <div class="row justify-content-center">
 <form id="form" class="regis-form" action="{{ route('register') }}" method="post" enctype="multipart/form-data">
   @csrf
-  <h2>Registro</h2>
+  <h1>Registro</h1>
   <hr size="1px" color="#ddd">
   <div class="form-group row">
     <div class="campo name">

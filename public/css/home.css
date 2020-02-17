@@ -1,5 +1,5 @@
 body {
-  background: #f3f3f3;;
+  background: rgb(251,251,251);
 }
 
 main {
@@ -33,7 +33,7 @@ main {
 .producto-box{
   display: flex;
   width: 25%;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
