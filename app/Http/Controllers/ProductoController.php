@@ -138,7 +138,6 @@ class ProductoController extends Controller
                 $articulo->save();
             }else{
                 $carrito = new Carrito();
-                $carrito->id = '';
                 $carrito->cantidad = 1;
                 $carrito->producto_id = $productos->id;
                 $carrito->usuario_id = Auth::user()->id;

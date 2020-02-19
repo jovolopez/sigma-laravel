@@ -9,7 +9,7 @@ class CarritosTable extends Migration
   public function up()
   {
     Schema::create('carritos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->default();
             $table->bigInteger('producto_id')->unsigned();
             $table->bigInteger('usuario_id')->unsigned();
             $table->string('estado');
